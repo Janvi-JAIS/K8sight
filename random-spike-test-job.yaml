@@ -1,0 +1,37 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: locust-random-spike-test
+  labels:
+    workload-pattern: random-spike
+spec:
+  backoffLimit: 0
+  ttlSecondsAfterFinished: 3600
+  template:
+    metadata:
+      labels:
+        workload-pattern: random-spike
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: locust
+          image: locustio/locust:2.46.4
+          args:
+            - "-f"
+            - "/locust/locustfile.py"
+            - "--host=http://php-apache"
+            - "--headless"
+            - "-u"
+            - "90"
+            - "-r"
+            - "15"
+            - "--run-time"
+            - "2m"
+          volumeMounts:
+            - name: locust-script
+              mountPath: /locust
+              readOnly: true
+      volumes:
+        - name: locust-script
+          configMap:
+            name: locust-random-spike-test-script

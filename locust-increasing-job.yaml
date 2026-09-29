@@ -1,0 +1,37 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: locust-increasing
+  labels:
+    workload-pattern: increasing
+spec:
+  backoffLimit: 0
+  ttlSecondsAfterFinished: 3600
+  template:
+    metadata:
+      labels:
+        workload-pattern: increasing
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: locust
+          image: locustio/locust:2.46.4
+          args:
+            - "-f"
+            - "/locust/locustfile.py"
+            - "--host=http://php-apache"
+            - "--headless"
+            - "-u"
+            - "100"
+            - "-r"
+            - "5"
+            - "--run-time"
+            - "10m"
+          volumeMounts:
+            - name: locust-script
+              mountPath: /locust
+              readOnly: true
+      volumes:
+        - name: locust-script
+          configMap:
+            name: locust-increasing-script

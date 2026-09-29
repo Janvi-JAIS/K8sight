@@ -3,3 +3,13 @@ __pycache__/
 *.pyc
 .env
 *.log
+
+# Generated ML/model outputs
+classifier_output/
+classifier_corrected_run/
+forecast_output/
+right_sizing_output/
+
+# Generated datasets / experiment dumps
+*.csv
+*.json
