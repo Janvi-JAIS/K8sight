@@ -1,0 +1,303 @@
+{
+  "boundaries": {
+    "collection_end_utc": "2026-10-13T17:04:41Z",
+    "collection_start_utc": "2026-10-13T16:54:30Z",
+    "cooldown_start_utc": "2026-10-13T17:01:40Z",
+    "locust_shutdown_utc": "2026-10-13T17:01:40Z",
+    "run_start_utc": "2026-10-13T16:56:32Z",
+    "unknown_reasons": {},
+    "workload_end_utc": "2026-10-13T17:01:40Z"
+  },
+  "data_quality": {
+    "container_changes": [],
+    "counter_resets": [],
+    "duplicate_timestamps": [],
+    "expected_samples": 41,
+    "gaps": [],
+    "observed_samples": 41,
+    "source_integrity": "verified"
+  },
+  "environment": {
+    "container": {
+      "observed_at_utc": "2026-10-13T16:56:32Z",
+      "reason": null,
+      "source": "experiment_metadata.json preload CPU gate Prometheus labels",
+      "status": "observed",
+      "value": "hpa-example"
+    },
+    "container_id": {
+      "observed_at_utc": "2026-10-13T16:56:32Z",
+      "reason": null,
+      "source": "experiment_metadata.json preload CPU gate",
+      "status": "observed",
+      "value": "containerd://cb643dc8cd90083ed93af50b3919eb3f4b35903961f9ab89434828f2e32530a9"
+    },
+    "image": {
+      "observed_at_utc": "2026-10-13T16:56:32Z",
+      "reason": null,
+      "source": "experiment_metadata.json target Pod inspection",
+      "status": "observed",
+      "value": "registry.k8s.io/hpa-example:latest"
+    },
+    "job": {
+      "observed_at_utc": "2026-10-13T17:04:41Z",
+      "reason": "Kubernetes job metadata was not collected",
+      "source": "collection_summary.json",
+      "status": "unknown",
+      "value": null
+    },
+    "kubernetes_context": {
+      "observed_at_utc": "2026-10-13T17:04:41Z",
+      "reason": "Kubernetes context was not recorded in the collection summary",
+      "source": "collection_summary.json",
+      "status": "unknown",
+      "value": null
+    },
+    "namespace": {
+      "observed_at_utc": "2026-10-13T16:56:32Z",
+      "reason": null,
+      "source": "launcher CPU-gate Prometheus labels and target Pod inspection",
+      "status": "observed",
+      "value": "default"
+    },
+    "node": {
+      "observed_at_utc": "2026-10-13T16:56:32Z",
+      "reason": null,
+      "source": "experiment_metadata.json target Pod inspection",
+      "status": "observed",
+      "value": "desktop-control-plane"
+    },
+    "pod": {
+      "observed_at_utc": "2026-10-13T16:56:32Z",
+      "reason": null,
+      "source": "experiment_metadata.json preload CPU gate",
+      "status": "observed",
+      "value": "php-apache-85668bb794-z45cl"
+    },
+    "pod_uid": {
+      "observed_at_utc": "2026-10-13T16:56:32Z",
+      "reason": null,
+      "source": "experiment_metadata.json preload CPU gate",
+      "status": "observed",
+      "value": "b0a1e8c1-37ea-4995-881b-c8eb50b5de1d"
+    },
+    "resources": {
+      "cpu_limit": {
+        "observed_at_utc": "2026-10-13T16:56:32Z",
+        "reason": null,
+        "source": "experiment_metadata.json target Pod resource specification",
+        "status": "observed",
+        "value": "500m"
+      },
+      "cpu_request": {
+        "observed_at_utc": "2026-10-13T16:56:32Z",
+        "reason": null,
+        "source": "experiment_metadata.json target Pod resource specification",
+        "status": "observed",
+        "value": "200m"
+      },
+      "memory_limit": {
+        "observed_at_utc": "2026-10-13T16:56:32Z",
+        "reason": null,
+        "source": "experiment_metadata.json target Pod resource specification",
+        "status": "observed",
+        "value": "128Mi"
+      },
+      "memory_request": {
+        "observed_at_utc": "2026-10-13T16:56:32Z",
+        "reason": null,
+        "source": "experiment_metadata.json target Pod resource specification",
+        "status": "observed",
+        "value": "64Mi"
+      }
+    }
+  },
+  "historical_audits": [],
+  "metrics": [
+    {
+      "availability": "available",
+      "labels": {
+        "container": "hpa-example",
+        "namespace": "default",
+        "pod": "php-apache-85668bb794-z45cl"
+      },
+      "lookback_seconds": 60,
+      "name": "container_cpu_usage_seconds_total",
+      "promql": "rate(container_cpu_usage_seconds_total{namespace=\"default\",pod=\"php-apache-85668bb794-z45cl\",container=\"hpa-example\"}[60s])",
+      "query_end_utc": "2026-10-13T17:04:41Z",
+      "query_start_utc": "2026-10-13T16:54:30Z",
+      "raw_sources": [
+        {
+          "media_type": "application/json",
+          "path": "raw/container_cpu_usage_seconds_total.json",
+          "sha256": "54429d362a707f3871ca599f33958c094c5a28fb3ef5ff199d5d7de387f073f9"
+        }
+      ],
+      "step_seconds": 15,
+      "unit": "cores"
+    },
+    {
+      "availability": "available",
+      "labels": {
+        "container": "hpa-example",
+        "namespace": "default",
+        "pod": "php-apache-85668bb794-z45cl"
+      },
+      "lookback_seconds": null,
+      "name": "container_memory_working_set_bytes",
+      "promql": "container_memory_working_set_bytes{namespace=\"default\",pod=\"php-apache-85668bb794-z45cl\",container=\"hpa-example\"}",
+      "query_end_utc": "2026-10-13T17:04:41Z",
+      "query_start_utc": "2026-10-13T16:54:30Z",
+      "raw_sources": [
+        {
+          "media_type": "application/json",
+          "path": "raw/container_memory_working_set_bytes.json",
+          "sha256": "7cb9d4ac3f64bb960182e547bf7341c61c65f787997131a8a718d13aaac43347"
+        }
+      ],
+      "step_seconds": 15,
+      "unit": "bytes"
+    },
+    {
+      "availability": "available",
+      "labels": {
+        "container": "hpa-example",
+        "namespace": "default",
+        "pod": "php-apache-85668bb794-z45cl"
+      },
+      "lookback_seconds": null,
+      "name": "container_cpu_cfs_throttled_periods_total",
+      "promql": "container_cpu_cfs_throttled_periods_total{namespace=\"default\",pod=\"php-apache-85668bb794-z45cl\",container=\"hpa-example\"}",
+      "query_end_utc": "2026-10-13T17:04:41Z",
+      "query_start_utc": "2026-10-13T16:54:30Z",
+      "raw_sources": [
+        {
+          "media_type": "application/json",
+          "path": "raw/container_cpu_cfs_throttled_periods_total.json",
+          "sha256": "1bfcefdac87aaef27666f1355c0a5a9e0fb72ac924d150841e80c8e8b95eec81"
+        }
+      ],
+      "step_seconds": 15,
+      "unit": "periods"
+    },
+    {
+      "availability": "available",
+      "labels": {
+        "container": "hpa-example",
+        "namespace": "default",
+        "pod": "php-apache-85668bb794-z45cl"
+      },
+      "lookback_seconds": null,
+      "name": "container_cpu_cfs_periods_total",
+      "promql": "container_cpu_cfs_periods_total{namespace=\"default\",pod=\"php-apache-85668bb794-z45cl\",container=\"hpa-example\"}",
+      "query_end_utc": "2026-10-13T17:04:41Z",
+      "query_start_utc": "2026-10-13T16:54:30Z",
+      "raw_sources": [
+        {
+          "media_type": "application/json",
+          "path": "raw/container_cpu_cfs_periods_total.json",
+          "sha256": "5b99f1471affe0e2c692ee767eb5f7e3d84b54c545e5bdc7716960d781cba4f4"
+        }
+      ],
+      "step_seconds": 15,
+      "unit": "periods"
+    },
+    {
+      "availability": "available",
+      "labels": {
+        "container": "hpa-example",
+        "namespace": "default",
+        "pod": "php-apache-85668bb794-z45cl"
+      },
+      "lookback_seconds": null,
+      "name": "container_cpu_cfs_throttled_seconds_total",
+      "promql": "container_cpu_cfs_throttled_seconds_total{namespace=\"default\",pod=\"php-apache-85668bb794-z45cl\",container=\"hpa-example\"}",
+      "query_end_utc": "2026-10-13T17:04:41Z",
+      "query_start_utc": "2026-10-13T16:54:30Z",
+      "raw_sources": [
+        {
+          "media_type": "application/json",
+          "path": "raw/container_cpu_cfs_throttled_seconds_total.json",
+          "sha256": "264c8fdf157cd981be9df7f4c9b939db9595f6da1fdddef559563165df649890"
+        }
+      ],
+      "step_seconds": 15,
+      "unit": "seconds"
+    }
+  ],
+  "observation_units": {
+    "cfs_periods_total": "periods",
+    "cfs_throttled_periods_total": "periods",
+    "cfs_throttled_seconds_total": "seconds",
+    "cpu_usage_cores": "cores",
+    "memory_working_set_bytes": "bytes",
+    "throttled_period_ratio_1m": "ratio"
+  },
+  "pattern": "stable",
+  "replicate": {
+    "observed_at_utc": null,
+    "reason": null,
+    "source": "integration_cli",
+    "status": "observed",
+    "value": 1
+  },
+  "run_id": "stable-low-r1-seed42-20261013-day3-01",
+  "run_outcome": "unknown",
+  "schema_version": "1.0.0",
+  "scrape_interval": {
+    "observed_at_utc": "2026-10-13T17:04:41Z",
+    "reason": "Query evaluation step does not establish actual scrape cadence",
+    "source": "collection_summary.json",
+    "status": "unknown",
+    "value": null
+  },
+  "throttling": {
+    "coverage_end_utc": null,
+    "coverage_start_utc": null,
+    "covered_sample_count": null,
+    "evidence_metrics": [],
+    "reason": "Throttling counters observed; finding requires complete validator evidence",
+    "status": "unknown"
+  },
+  "timezone": "UTC",
+  "workload": {
+    "generator": {
+      "observed_at_utc": "2026-10-13T16:56:32Z",
+      "reason": null,
+      "source": "experiment_metadata.json",
+      "status": "observed",
+      "value": "experiment_kit/generators/locustfile.py"
+    },
+    "generator_sha256": {
+      "observed_at_utc": "2026-10-13T16:56:32Z",
+      "reason": null,
+      "source": "experiment metadata; verified against current generator file using sha256sum",
+      "status": "observed",
+      "value": "f30b611a9e185d283fbe94870445f9c7130248f8cdc7db4515e6ce9b9337be15"
+    },
+    "generator_version": {
+      "observed_at_utc": "2026-10-13T16:56:32Z",
+      "reason": null,
+      "source": "locust version command",
+      "status": "observed",
+      "value": "locust 2.46.4 from /home/janvee/k8sight-locust/.venv/lib/python3.14/site-packages/locust (Python 3.14.4)"
+    },
+    "parameters": {
+      "duration_seconds": 300,
+      "load_level": "low",
+      "pacing_target_seconds_per_request": 1.0,
+      "pattern": "stable",
+      "replicate": 1,
+      "spawn_rate": 5,
+      "target_url": "http://127.0.0.1:18080",
+      "users": 2
+    },
+    "random_seed": {
+      "observed_at_utc": "2026-10-13T16:56:32Z",
+      "reason": null,
+      "source": "experiment_metadata.json",
+      "status": "observed",
+      "value": 42
+    }
+  }
+}

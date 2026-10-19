@@ -1,0 +1,126 @@
+{
+  "run_outcome": {
+    "status": "observed",
+    "value": "completed",
+    "reason": null,
+    "source": "experiment_metadata.json",
+    "observed_at_utc": "2026-10-13T18:11:10Z"
+  },
+  "boundaries": {
+    "run_start_utc": "2026-10-13T18:03:07Z",
+    "workload_end_utc": "2026-10-13T18:08:09Z",
+    "cooldown_start_utc": "2026-10-13T18:08:09Z",
+    "locust_shutdown_utc": "2026-10-13T18:08:09Z"
+  },
+  "workload": {
+    "generator": {
+      "status": "observed",
+      "value": "experiment_kit/generators/locustfile.py",
+      "reason": null,
+      "source": "experiment_metadata.json",
+      "observed_at_utc": null
+    },
+    "generator_sha256": {
+      "status": "observed",
+      "value": "f30b611a9e185d283fbe94870445f9c7130248f8cdc7db4515e6ce9b9337be15",
+      "reason": null,
+      "source": "experiment_metadata.json",
+      "observed_at_utc": null
+    },
+    "random_seed": {
+      "status": "observed",
+      "value": 123,
+      "reason": null,
+      "source": "experiment_metadata.json",
+      "observed_at_utc": null
+    },
+    "parameters": {
+      "pattern": "stable",
+      "load_level": "low",
+      "replicate": 2,
+      "duration_seconds": 300,
+      "target_url": "http://127.0.0.1:18080"
+    }
+  },
+  "environment": {
+    "namespace": {
+      "status": "observed",
+      "value": "default",
+      "reason": null,
+      "source": "experiment_metadata.json/collection_summary.json",
+      "observed_at_utc": null
+    },
+    "pod": {
+      "status": "observed",
+      "value": "php-apache-85668bb794-z45cl",
+      "reason": null,
+      "source": "experiment_metadata.json/collection_summary.json",
+      "observed_at_utc": null
+    },
+    "pod_uid": {
+      "status": "observed",
+      "value": "b0a1e8c1-37ea-4995-881b-c8eb50b5de1d",
+      "reason": null,
+      "source": "experiment_metadata.json/collection_summary.json",
+      "observed_at_utc": null
+    },
+    "container": {
+      "status": "observed",
+      "value": "hpa-example",
+      "reason": null,
+      "source": "experiment_metadata.json/collection_summary.json",
+      "observed_at_utc": null
+    },
+    "container_id": {
+      "status": "observed",
+      "value": "containerd://cb643dc8cd90083ed93af50b3919eb3f4b35903961f9ab89434828f2e32530a9",
+      "reason": null,
+      "source": "experiment_metadata.json/collection_summary.json",
+      "observed_at_utc": null
+    },
+    "image": {
+      "status": "observed",
+      "value": "registry.k8s.io/hpa-example:latest",
+      "reason": null,
+      "source": "experiment_metadata.json/collection_summary.json",
+      "observed_at_utc": null
+    },
+    "node": {
+      "status": "observed",
+      "value": "desktop-control-plane",
+      "reason": null,
+      "source": "experiment_metadata.json/collection_summary.json",
+      "observed_at_utc": null
+    },
+    "resources": {
+      "cpu_request": {
+        "status": "observed",
+        "value": "200m",
+        "reason": null,
+        "source": "experiment_metadata.json",
+        "observed_at_utc": null
+      },
+      "memory_request": {
+        "status": "observed",
+        "value": "64Mi",
+        "reason": null,
+        "source": "experiment_metadata.json",
+        "observed_at_utc": null
+      },
+      "cpu_limit": {
+        "status": "observed",
+        "value": "500m",
+        "reason": null,
+        "source": "experiment_metadata.json",
+        "observed_at_utc": null
+      },
+      "memory_limit": {
+        "status": "observed",
+        "value": "128Mi",
+        "reason": null,
+        "source": "experiment_metadata.json",
+        "observed_at_utc": null
+      }
+    }
+  }
+}

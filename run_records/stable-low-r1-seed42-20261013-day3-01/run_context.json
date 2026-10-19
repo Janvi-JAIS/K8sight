@@ -1,0 +1,145 @@
+{
+  "boundaries": {
+    "run_start_utc": "2026-10-13T16:56:32Z",
+    "workload_end_utc": "2026-10-13T17:01:40Z",
+    "cooldown_start_utc": "2026-10-13T17:01:40Z",
+    "locust_shutdown_utc": "2026-10-13T17:01:40Z"
+  },
+  "workload": {
+    "generator": {
+      "status": "observed",
+      "value": "experiment_kit/generators/locustfile.py",
+      "reason": null,
+      "source": "experiment_metadata.json",
+      "observed_at_utc": "2026-10-13T16:56:32Z"
+    },
+    "generator_version": {
+      "status": "observed",
+      "value": "locust 2.46.4 from /home/janvee/k8sight-locust/.venv/lib/python3.14/site-packages/locust (Python 3.14.4)",
+      "reason": null,
+      "source": "locust version command",
+      "observed_at_utc": "2026-10-13T16:56:32Z"
+    },
+    "generator_sha256": {
+      "status": "observed",
+      "value": "f30b611a9e185d283fbe94870445f9c7130248f8cdc7db4515e6ce9b9337be15",
+      "reason": null,
+      "source": "experiment metadata; verified against current generator file using sha256sum",
+      "observed_at_utc": "2026-10-13T16:56:32Z"
+    },
+    "random_seed": {
+      "status": "observed",
+      "value": 42,
+      "reason": null,
+      "source": "experiment_metadata.json",
+      "observed_at_utc": "2026-10-13T16:56:32Z"
+    },
+    "parameters": {
+      "pattern": "stable",
+      "load_level": "low",
+      "replicate": 1,
+      "duration_seconds": 300,
+      "users": 2,
+      "spawn_rate": 5,
+      "pacing_target_seconds_per_request": 1.0,
+      "target_url": "http://127.0.0.1:18080"
+    }
+  },
+  "environment": {
+    "namespace": {
+      "status": "observed",
+      "value": "default",
+      "reason": null,
+      "source": "launcher CPU-gate Prometheus labels and target Pod inspection",
+      "observed_at_utc": "2026-10-13T16:56:32Z"
+    },
+    "job": {
+      "status": "not_applicable",
+      "value": null,
+      "reason": "Locust ran locally; the target workload was not launched as a Kubernetes Job",
+      "source": "experiment launcher design",
+      "observed_at_utc": null
+    },
+    "pod": {
+      "status": "observed",
+      "value": "php-apache-85668bb794-z45cl",
+      "reason": null,
+      "source": "experiment_metadata.json preload CPU gate",
+      "observed_at_utc": "2026-10-13T16:56:32Z"
+    },
+    "pod_uid": {
+      "status": "observed",
+      "value": "b0a1e8c1-37ea-4995-881b-c8eb50b5de1d",
+      "reason": null,
+      "source": "experiment_metadata.json preload CPU gate",
+      "observed_at_utc": "2026-10-13T16:56:32Z"
+    },
+    "container": {
+      "status": "observed",
+      "value": "hpa-example",
+      "reason": null,
+      "source": "experiment_metadata.json preload CPU gate Prometheus labels",
+      "observed_at_utc": "2026-10-13T16:56:32Z"
+    },
+    "container_id": {
+      "status": "observed",
+      "value": "containerd://cb643dc8cd90083ed93af50b3919eb3f4b35903961f9ab89434828f2e32530a9",
+      "reason": null,
+      "source": "experiment_metadata.json preload CPU gate",
+      "observed_at_utc": "2026-10-13T16:56:32Z"
+    },
+    "image": {
+      "status": "observed",
+      "value": "registry.k8s.io/hpa-example:latest",
+      "reason": null,
+      "source": "experiment_metadata.json target Pod inspection",
+      "observed_at_utc": "2026-10-13T16:56:32Z"
+    },
+    "node": {
+      "status": "observed",
+      "value": "desktop-control-plane",
+      "reason": null,
+      "source": "experiment_metadata.json target Pod inspection",
+      "observed_at_utc": "2026-10-13T16:56:32Z"
+    },
+    "resources": {
+      "cpu_request": {
+        "status": "observed",
+        "value": "200m",
+        "reason": null,
+        "source": "experiment_metadata.json target Pod resource specification",
+        "observed_at_utc": "2026-10-13T16:56:32Z"
+      },
+      "memory_request": {
+        "status": "observed",
+        "value": "64Mi",
+        "reason": null,
+        "source": "experiment_metadata.json target Pod resource specification",
+        "observed_at_utc": "2026-10-13T16:56:32Z"
+      },
+      "cpu_limit": {
+        "status": "observed",
+        "value": "500m",
+        "reason": null,
+        "source": "experiment_metadata.json target Pod resource specification",
+        "observed_at_utc": "2026-10-13T16:56:32Z"
+      },
+      "memory_limit": {
+        "status": "observed",
+        "value": "128Mi",
+        "reason": null,
+        "source": "experiment_metadata.json target Pod resource specification",
+        "observed_at_utc": "2026-10-13T16:56:32Z"
+      }
+    }
+  },
+  "identity_samples": [],
+  "historical_audits": [],
+  "run_outcome": {
+    "status": "observed",
+    "value": "completed",
+    "reason": null,
+    "source": "experiment_metadata.json",
+    "observed_at_utc": "2026-10-13T17:04:42Z"
+  }
+}

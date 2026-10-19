@@ -1,0 +1,136 @@
+{
+  "collector": "k8sight-read-only-prometheus",
+  "created_at_utc": "2026-10-13T18:49:35Z",
+  "metrics": [
+    {
+      "availability": "available",
+      "labels": {
+        "container": "hpa-example",
+        "namespace": "default",
+        "pod": "php-apache-85668bb794-z45cl"
+      },
+      "lookback_seconds": 60,
+      "name": "container_cpu_usage_seconds_total",
+      "promql": "rate(container_cpu_usage_seconds_total{namespace=\"default\",pod=\"php-apache-85668bb794-z45cl\",container=\"hpa-example\"}[60s])",
+      "query_end_utc": "2026-10-13T18:49:34Z",
+      "query_start_utc": "2026-10-13T18:39:31Z",
+      "raw_sources": [
+        {
+          "media_type": "application/json",
+          "path": "raw/container_cpu_usage_seconds_total.json",
+          "sha256": "5b7a50b874dacb5eba7f6a42b3057e00c9518fdc0ca5471e9f17a1210fc29fa1"
+        }
+      ],
+      "step_seconds": 15,
+      "unit": "cores"
+    },
+    {
+      "availability": "available",
+      "labels": {
+        "container": "hpa-example",
+        "namespace": "default",
+        "pod": "php-apache-85668bb794-z45cl"
+      },
+      "lookback_seconds": null,
+      "name": "container_memory_working_set_bytes",
+      "promql": "container_memory_working_set_bytes{namespace=\"default\",pod=\"php-apache-85668bb794-z45cl\",container=\"hpa-example\"}",
+      "query_end_utc": "2026-10-13T18:49:34Z",
+      "query_start_utc": "2026-10-13T18:39:31Z",
+      "raw_sources": [
+        {
+          "media_type": "application/json",
+          "path": "raw/container_memory_working_set_bytes.json",
+          "sha256": "477bd99e1cd1c302e9848ed540c1751b3764b68eadc57b7f8826544e209c6355"
+        }
+      ],
+      "step_seconds": 15,
+      "unit": "bytes"
+    },
+    {
+      "availability": "available",
+      "labels": {
+        "container": "hpa-example",
+        "namespace": "default",
+        "pod": "php-apache-85668bb794-z45cl"
+      },
+      "lookback_seconds": null,
+      "name": "container_cpu_cfs_throttled_periods_total",
+      "promql": "container_cpu_cfs_throttled_periods_total{namespace=\"default\",pod=\"php-apache-85668bb794-z45cl\",container=\"hpa-example\"}",
+      "query_end_utc": "2026-10-13T18:49:34Z",
+      "query_start_utc": "2026-10-13T18:39:31Z",
+      "raw_sources": [
+        {
+          "media_type": "application/json",
+          "path": "raw/container_cpu_cfs_throttled_periods_total.json",
+          "sha256": "171a6aefb30c27adf18050e88099ece9434e5d8a116fbb582385570bff7742c1"
+        }
+      ],
+      "step_seconds": 15,
+      "unit": "periods"
+    },
+    {
+      "availability": "available",
+      "labels": {
+        "container": "hpa-example",
+        "namespace": "default",
+        "pod": "php-apache-85668bb794-z45cl"
+      },
+      "lookback_seconds": null,
+      "name": "container_cpu_cfs_periods_total",
+      "promql": "container_cpu_cfs_periods_total{namespace=\"default\",pod=\"php-apache-85668bb794-z45cl\",container=\"hpa-example\"}",
+      "query_end_utc": "2026-10-13T18:49:34Z",
+      "query_start_utc": "2026-10-13T18:39:31Z",
+      "raw_sources": [
+        {
+          "media_type": "application/json",
+          "path": "raw/container_cpu_cfs_periods_total.json",
+          "sha256": "c0a09e5d9cf3c3650b254b180cd197f4706d9330f4fe2471932ad255df38959b"
+        }
+      ],
+      "step_seconds": 15,
+      "unit": "periods"
+    },
+    {
+      "availability": "available",
+      "labels": {
+        "container": "hpa-example",
+        "namespace": "default",
+        "pod": "php-apache-85668bb794-z45cl"
+      },
+      "lookback_seconds": null,
+      "name": "container_cpu_cfs_throttled_seconds_total",
+      "promql": "container_cpu_cfs_throttled_seconds_total{namespace=\"default\",pod=\"php-apache-85668bb794-z45cl\",container=\"hpa-example\"}",
+      "query_end_utc": "2026-10-13T18:49:34Z",
+      "query_start_utc": "2026-10-13T18:39:31Z",
+      "raw_sources": [
+        {
+          "media_type": "application/json",
+          "path": "raw/container_cpu_cfs_throttled_seconds_total.json",
+          "sha256": "805ae37431d9b7c60550b12fe46d45ad99923b2adf36a42edbecb6a1da64c426"
+        }
+      ],
+      "step_seconds": 15,
+      "unit": "seconds"
+    }
+  ],
+  "note": "Raw query responses are archived. This is not yet a validated dataset-schema run manifest and must not be used for training.",
+  "prometheus_url": "http://127.0.0.1:19091",
+  "query_range": {
+    "end_utc": "2026-10-13T18:49:34Z",
+    "scrape_interval_seconds": 15,
+    "start_utc": "2026-10-13T18:39:31Z",
+    "step_seconds": 15
+  },
+  "sample_counts": {
+    "container_cpu_cfs_periods_total": 41,
+    "container_cpu_cfs_throttled_periods_total": 41,
+    "container_cpu_cfs_throttled_seconds_total": 41,
+    "container_cpu_usage_seconds_total": 41,
+    "container_memory_working_set_bytes": 41
+  },
+  "target": {
+    "container": "hpa-example",
+    "namespace": "default",
+    "pod": "php-apache-85668bb794-z45cl"
+  }
+}

@@ -1,0 +1,33 @@
+[2026-10-13 20:08:15,858] DESKTOP-8M2U7LM/INFO/locust.main: Starting Locust 2.46.4
+[2026-10-13 20:08:15,861] DESKTOP-8M2U7LM/WARNING/locust.main: --run-time, --users or --spawn-rate have no impact on LoadShapes unless the shape class explicitly reads them. See: docs.locust.io/en/stable/custom-load-shape.html#use-common-options
+[2026-10-13 20:08:15,862] DESKTOP-8M2U7LM/WARNING/locust.main: The following option(s) will be ignored: --run-time
+[2026-10-13 20:08:15,869] DESKTOP-8M2U7LM/INFO/locust.runners: Shape test starting.
+[2026-10-13 20:08:15,871] DESKTOP-8M2U7LM/INFO/locust.runners: Shape worker starting
+[2026-10-13 20:08:15,871] DESKTOP-8M2U7LM/INFO/locust.runners: Shape test updating to 13 users at 15.00 spawn rate
+[2026-10-13 20:08:15,871] DESKTOP-8M2U7LM/INFO/locust.runners: Ramping to 13 users at a rate of 15.00 per second
+[2026-10-13 20:08:15,895] DESKTOP-8M2U7LM/INFO/locust.runners: All users spawned: {"K8sightApacheUser": 13} (13 total users)
+[2026-10-13 20:08:30,907] DESKTOP-8M2U7LM/INFO/locust.runners: Shape test updating to 2 users at 15.00 spawn rate
+[2026-10-13 20:08:30,908] DESKTOP-8M2U7LM/INFO/locust.runners: Ramping to 2 users at a rate of 15.00 per second
+[2026-10-13 20:08:30,940] DESKTOP-8M2U7LM/INFO/locust.runners: All users spawned: {"K8sightApacheUser": 2} (2 total users)
+[2026-10-13 20:11:01,444] DESKTOP-8M2U7LM/INFO/locust.runners: Shape test updating to 8 users at 15.00 spawn rate
+[2026-10-13 20:11:01,444] DESKTOP-8M2U7LM/INFO/locust.runners: Ramping to 8 users at a rate of 15.00 per second
+[2026-10-13 20:11:01,445] DESKTOP-8M2U7LM/INFO/locust.runners: All users spawned: {"K8sightApacheUser": 8} (8 total users)
+[2026-10-13 20:11:16,495] DESKTOP-8M2U7LM/INFO/locust.runners: Shape test updating to 2 users at 15.00 spawn rate
+[2026-10-13 20:11:16,495] DESKTOP-8M2U7LM/INFO/locust.runners: Ramping to 2 users at a rate of 15.00 per second
+[2026-10-13 20:11:16,506] DESKTOP-8M2U7LM/INFO/locust.runners: All users spawned: {"K8sightApacheUser": 2} (2 total users)
+[2026-10-13 20:12:01,678] DESKTOP-8M2U7LM/INFO/locust.runners: Shape test updating to 11 users at 15.00 spawn rate
+[2026-10-13 20:12:01,679] DESKTOP-8M2U7LM/INFO/locust.runners: Ramping to 11 users at a rate of 15.00 per second
+[2026-10-13 20:12:01,689] DESKTOP-8M2U7LM/INFO/locust.runners: All users spawned: {"K8sightApacheUser": 11} (11 total users)
+[2026-10-13 20:12:16,764] DESKTOP-8M2U7LM/INFO/locust.runners: Shape test updating to 2 users at 15.00 spawn rate
+[2026-10-13 20:12:16,768] DESKTOP-8M2U7LM/INFO/locust.runners: Ramping to 2 users at a rate of 15.00 per second
+[2026-10-13 20:12:16,784] DESKTOP-8M2U7LM/INFO/locust.runners: All users spawned: {"K8sightApacheUser": 2} (2 total users)
+[2026-10-13 20:12:45,882] DESKTOP-8M2U7LM/INFO/locust.runners: Shape test updating to 14 users at 15.00 spawn rate
+[2026-10-13 20:12:45,883] DESKTOP-8M2U7LM/INFO/locust.runners: Ramping to 14 users at a rate of 15.00 per second
+[2026-10-13 20:12:45,888] DESKTOP-8M2U7LM/INFO/locust.runners: All users spawned: {"K8sightApacheUser": 14} (14 total users)
+[2026-10-13 20:13:00,945] DESKTOP-8M2U7LM/INFO/locust.runners: Shape test updating to 2 users at 15.00 spawn rate
+[2026-10-13 20:13:00,946] DESKTOP-8M2U7LM/INFO/locust.runners: Ramping to 2 users at a rate of 15.00 per second
+[2026-10-13 20:13:00,960] DESKTOP-8M2U7LM/INFO/locust.runners: All users spawned: {"K8sightApacheUser": 2} (2 total users)
+[2026-10-13 20:13:16,008] DESKTOP-8M2U7LM/INFO/locust.runners: Shape test stopping
+[2026-10-13 20:13:16,101] DESKTOP-8M2U7LM/INFO/locust.main: Shape test completed, shutting down
+[2026-10-13 20:13:16,102] DESKTOP-8M2U7LM/INFO/locust.main: Run time limit set to 300 seconds
+[2026-10-13 20:13:16,102] DESKTOP-8M2U7LM/INFO/locust.main: Shutting down (exit code 0)

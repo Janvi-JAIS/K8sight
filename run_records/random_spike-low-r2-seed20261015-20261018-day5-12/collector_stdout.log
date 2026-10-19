@@ -1,0 +1,32 @@
+{
+  "output_dir": "/home/janvee/k8sight-locust/run_records/random_spike-low-r2-seed20261015-20261018-day5-12/prometheus_raw",
+  "metrics": [
+    {
+      "name": "container_cpu_usage_seconds_total",
+      "availability": "available"
+    },
+    {
+      "name": "container_memory_working_set_bytes",
+      "availability": "available"
+    },
+    {
+      "name": "container_cpu_cfs_throttled_periods_total",
+      "availability": "available"
+    },
+    {
+      "name": "container_cpu_cfs_periods_total",
+      "availability": "available"
+    },
+    {
+      "name": "container_cpu_cfs_throttled_seconds_total",
+      "availability": "available"
+    }
+  ],
+  "sample_counts": {
+    "container_cpu_usage_seconds_total": 41,
+    "container_memory_working_set_bytes": 41,
+    "container_cpu_cfs_throttled_periods_total": 41,
+    "container_cpu_cfs_periods_total": 41,
+    "container_cpu_cfs_throttled_seconds_total": 41
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "boundaries": {
+    "run_start_utc": "2026-10-11T18:47:39Z",
+    "workload_end_utc": "2026-10-11T18:49:41Z",
+    "cooldown_start_utc": "2026-10-11T18:51:37Z",
+    "locust_shutdown_utc": "2026-10-11T18:49:41Z"
+  },
+  "workload": {
+    "generator": {
+      "status": "observed",
+      "value": "Locust",
+      "reason": null,
+      "source": "locust_console.log and run configuration",
+      "observed_at_utc": "2026-10-11T18:56:46Z"
+    },
+    "generator_version": {
+      "status": "observed",
+      "value": "2.46.4",
+      "reason": null,
+      "source": "local Locust version check",
+      "observed_at_utc": "2026-10-11T18:56:46Z"
+    },
+    "generator_sha256": {
+      "status": "unknown",
+      "value": null,
+      "reason": "Executed generator file hash has not been verified",
+      "source": "not recorded",
+      "observed_at_utc": null
+    },
+    "random_seed": {
+      "status": "observed",
+      "value": 42,
+      "reason": null,
+      "source": "stable-low-r1 run configuration",
+      "observed_at_utc": "2026-10-11T18:56:46Z"
+    },
+    "parameters": {
+      "pattern": "stable",
+      "load_level": "low",
+      "replicate": 1,
+      "duration_seconds": 120,
+      "users": 2,
+      "spawn_rate": 5,
+      "target_url": "http://127.0.0.1:8080"
+    }
+  },
+  "environment": {
+    "namespace": {
+      "status": "observed",
+      "value": "default",
+      "reason": null,
+      "source": "kubectl Pod inspection",
+      "observed_at_utc": "2026-10-11T18:56:46Z"
+    },
+    "job": {
+      "status": "unknown",
+      "value": null,
+      "reason": "Workload ran locally; Kubernetes Job metadata is not applicable",
+      "source": "not recorded",
+      "observed_at_utc": null
+    },
+    "pod": {
+      "status": "observed",
+      "value": "php-apache-85668bb794-z45cl",
+      "reason": null,
+      "source": "kubectl Pod inspection",
+      "observed_at_utc": "2026-10-11T18:56:46Z"
+    },
+    "pod_uid": {
+      "status": "observed",
+      "value": "b0a1e8c1-37ea-4995-881b-c8eb50b5de1d",
+      "reason": null,
+      "source": "kubectl Pod inspection",
+      "observed_at_utc": "2026-10-11T18:56:46Z"
+    },
+    "container": {
+      "status": "observed",
+      "value": "hpa-example",
+      "reason": null,
+      "source": "kubectl Pod inspection",
+      "observed_at_utc": "2026-10-11T18:56:46Z"
+    },
+    "container_id": {
+      "status": "observed",
+      "value": "containerd://30cd7b837ad0dd7821608ecedc5f3a63a3af341ecb4591692398f4ed8a190c79",
+      "reason": null,
+      "source": "kubectl Pod inspection",
+      "observed_at_utc": "2026-10-11T18:56:46Z"
+    },
+    "image": {
+      "status": "observed",
+      "value": "registry.k8s.io/hpa-example:latest",
+      "reason": null,
+      "source": "kubectl Pod inspection",
+      "observed_at_utc": "2026-10-11T18:56:46Z"
+    },
+    "node": {
+      "status": "observed",
+      "value": "desktop-control-plane",
+      "reason": null,
+      "source": "kubectl Pod inspection",
+      "observed_at_utc": "2026-10-11T18:56:46Z"
+    },
+    "resources": {
+      "cpu_request": {
+        "status": "observed",
+        "value": "200m",
+        "reason": null,
+        "source": "kubectl Pod specification",
+        "observed_at_utc": "2026-10-11T18:56:46Z"
+      },
+      "memory_request": {
+        "status": "observed",
+        "value": "64Mi",
+        "reason": null,
+        "source": "kubectl Pod specification",
+        "observed_at_utc": "2026-10-11T18:56:46Z"
+      },
+      "cpu_limit": {
+        "status": "observed",
+        "value": "500m",
+        "reason": null,
+        "source": "kubectl Pod specification",
+        "observed_at_utc": "2026-10-11T18:56:46Z"
+      },
+      "memory_limit": {
+        "status": "observed",
+        "value": "128Mi",
+        "reason": null,
+        "source": "kubectl Pod specification",
+        "observed_at_utc": "2026-10-11T18:56:46Z"
+      }
+    }
+  },
+  "identity_samples": [],
+  "historical_audits": []
+}

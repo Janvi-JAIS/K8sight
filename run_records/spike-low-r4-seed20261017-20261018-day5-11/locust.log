@@ -1,0 +1,18 @@
+[2026-10-18 20:31:37,731] DESKTOP-8M2U7LM/INFO/locust.main: Starting Locust 2.46.4
+[2026-10-18 20:31:37,732] DESKTOP-8M2U7LM/WARNING/locust.main: --run-time, --users or --spawn-rate have no impact on LoadShapes unless the shape class explicitly reads them. See: docs.locust.io/en/stable/custom-load-shape.html#use-common-options
+[2026-10-18 20:31:37,732] DESKTOP-8M2U7LM/WARNING/locust.main: The following option(s) will be ignored: --run-time
+[2026-10-18 20:31:37,733] DESKTOP-8M2U7LM/INFO/locust.runners: Shape test starting.
+[2026-10-18 20:31:37,735] DESKTOP-8M2U7LM/INFO/locust.runners: Shape worker starting
+[2026-10-18 20:31:37,735] DESKTOP-8M2U7LM/INFO/locust.runners: Shape test updating to 2 users at 20.00 spawn rate
+[2026-10-18 20:31:37,735] DESKTOP-8M2U7LM/INFO/locust.runners: Ramping to 2 users at a rate of 20.00 per second
+[2026-10-18 20:31:37,736] DESKTOP-8M2U7LM/INFO/locust.runners: All users spawned: {"K8sightApacheUser": 2} (2 total users)
+[2026-10-18 20:33:16,895] DESKTOP-8M2U7LM/INFO/locust.runners: Shape test updating to 15 users at 20.00 spawn rate
+[2026-10-18 20:33:16,895] DESKTOP-8M2U7LM/INFO/locust.runners: Ramping to 15 users at a rate of 20.00 per second
+[2026-10-18 20:33:16,898] DESKTOP-8M2U7LM/INFO/locust.runners: All users spawned: {"K8sightApacheUser": 15} (15 total users)
+[2026-10-18 20:34:57,135] DESKTOP-8M2U7LM/INFO/locust.runners: Shape test updating to 2 users at 20.00 spawn rate
+[2026-10-18 20:34:57,135] DESKTOP-8M2U7LM/INFO/locust.runners: Ramping to 2 users at a rate of 20.00 per second
+[2026-10-18 20:34:57,141] DESKTOP-8M2U7LM/INFO/locust.runners: All users spawned: {"K8sightApacheUser": 2} (2 total users)
+[2026-10-18 20:36:38,396] DESKTOP-8M2U7LM/INFO/locust.runners: Shape test stopping
+[2026-10-18 20:36:38,435] DESKTOP-8M2U7LM/INFO/locust.main: Shape test completed, shutting down
+[2026-10-18 20:36:38,435] DESKTOP-8M2U7LM/INFO/locust.main: Run time limit set to 300 seconds
+[2026-10-18 20:36:38,435] DESKTOP-8M2U7LM/INFO/locust.main: Shutting down (exit code 0)

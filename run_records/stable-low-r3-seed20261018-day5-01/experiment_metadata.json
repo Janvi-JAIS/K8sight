@@ -1,0 +1,20 @@
+{
+  "duration_seconds": 300,
+  "events": [],
+  "failure": {
+    "error": "Command failed (1): kubectl get pods -n default -l app=php-apache -o json: Unable to connect to the server: dial tcp 127.0.0.1:59553: socket: operation not permitted",
+    "observed_at_utc": "2026-10-18T08:33:56Z"
+  },
+  "generator": "experiment_kit/generators/locustfile.py",
+  "generator_sha256": "f30b611a9e185d283fbe94870445f9c7130248f8cdc7db4515e6ce9b9337be15",
+  "load_level": "low",
+  "pattern": "stable",
+  "replicate": 3,
+  "run_id": "stable-low-r3-seed20261018-day5-01",
+  "run_type": "experiment",
+  "seed": 20261018,
+  "status": "failed",
+  "target_url": "http://127.0.0.1:18080",
+  "training_acceptance_status": "pending_schema_validation_and_dataset_acceptance",
+  "training_eligible": false
+}

@@ -1,0 +1,300 @@
+{
+  "boundaries": {
+    "collection_end_utc": "2026-10-13T18:11:09Z",
+    "collection_start_utc": "2026-10-13T18:01:07Z",
+    "cooldown_start_utc": "2026-10-13T18:08:09Z",
+    "locust_shutdown_utc": "2026-10-13T18:08:09Z",
+    "run_start_utc": "2026-10-13T18:03:07Z",
+    "unknown_reasons": {},
+    "workload_end_utc": "2026-10-13T18:08:09Z"
+  },
+  "data_quality": {
+    "container_changes": [],
+    "counter_resets": [],
+    "duplicate_timestamps": [],
+    "expected_samples": 41,
+    "gaps": [],
+    "observed_samples": 41,
+    "source_integrity": "verified"
+  },
+  "environment": {
+    "container": {
+      "observed_at_utc": null,
+      "reason": null,
+      "source": "experiment_metadata.json/collection_summary.json",
+      "status": "observed",
+      "value": "hpa-example"
+    },
+    "container_id": {
+      "observed_at_utc": null,
+      "reason": null,
+      "source": "experiment_metadata.json/collection_summary.json",
+      "status": "observed",
+      "value": "containerd://cb643dc8cd90083ed93af50b3919eb3f4b35903961f9ab89434828f2e32530a9"
+    },
+    "image": {
+      "observed_at_utc": null,
+      "reason": null,
+      "source": "experiment_metadata.json/collection_summary.json",
+      "status": "observed",
+      "value": "registry.k8s.io/hpa-example:latest"
+    },
+    "job": {
+      "observed_at_utc": "2026-10-13T18:11:10Z",
+      "reason": "Kubernetes job metadata was not collected",
+      "source": "collection_summary.json",
+      "status": "unknown",
+      "value": null
+    },
+    "kubernetes_context": {
+      "observed_at_utc": "2026-10-13T18:11:10Z",
+      "reason": "Kubernetes context was not recorded in the collection summary",
+      "source": "collection_summary.json",
+      "status": "unknown",
+      "value": null
+    },
+    "namespace": {
+      "observed_at_utc": null,
+      "reason": null,
+      "source": "experiment_metadata.json/collection_summary.json",
+      "status": "observed",
+      "value": "default"
+    },
+    "node": {
+      "observed_at_utc": null,
+      "reason": null,
+      "source": "experiment_metadata.json/collection_summary.json",
+      "status": "observed",
+      "value": "desktop-control-plane"
+    },
+    "pod": {
+      "observed_at_utc": null,
+      "reason": null,
+      "source": "experiment_metadata.json/collection_summary.json",
+      "status": "observed",
+      "value": "php-apache-85668bb794-z45cl"
+    },
+    "pod_uid": {
+      "observed_at_utc": null,
+      "reason": null,
+      "source": "experiment_metadata.json/collection_summary.json",
+      "status": "observed",
+      "value": "b0a1e8c1-37ea-4995-881b-c8eb50b5de1d"
+    },
+    "resources": {
+      "cpu_limit": {
+        "observed_at_utc": null,
+        "reason": null,
+        "source": "experiment_metadata.json",
+        "status": "observed",
+        "value": "500m"
+      },
+      "cpu_request": {
+        "observed_at_utc": null,
+        "reason": null,
+        "source": "experiment_metadata.json",
+        "status": "observed",
+        "value": "200m"
+      },
+      "memory_limit": {
+        "observed_at_utc": null,
+        "reason": null,
+        "source": "experiment_metadata.json",
+        "status": "observed",
+        "value": "128Mi"
+      },
+      "memory_request": {
+        "observed_at_utc": null,
+        "reason": null,
+        "source": "experiment_metadata.json",
+        "status": "observed",
+        "value": "64Mi"
+      }
+    }
+  },
+  "historical_audits": [],
+  "metrics": [
+    {
+      "availability": "available",
+      "labels": {
+        "container": "hpa-example",
+        "namespace": "default",
+        "pod": "php-apache-85668bb794-z45cl"
+      },
+      "lookback_seconds": 60,
+      "name": "container_cpu_usage_seconds_total",
+      "promql": "rate(container_cpu_usage_seconds_total{namespace=\"default\",pod=\"php-apache-85668bb794-z45cl\",container=\"hpa-example\"}[60s])",
+      "query_end_utc": "2026-10-13T18:11:09Z",
+      "query_start_utc": "2026-10-13T18:01:07Z",
+      "raw_sources": [
+        {
+          "media_type": "application/json",
+          "path": "raw/container_cpu_usage_seconds_total.json",
+          "sha256": "79a3a4abe43db5747295d04ecbec5157f8df7fd2aff8533bc28d905e8d94251a"
+        }
+      ],
+      "step_seconds": 15,
+      "unit": "cores"
+    },
+    {
+      "availability": "available",
+      "labels": {
+        "container": "hpa-example",
+        "namespace": "default",
+        "pod": "php-apache-85668bb794-z45cl"
+      },
+      "lookback_seconds": null,
+      "name": "container_memory_working_set_bytes",
+      "promql": "container_memory_working_set_bytes{namespace=\"default\",pod=\"php-apache-85668bb794-z45cl\",container=\"hpa-example\"}",
+      "query_end_utc": "2026-10-13T18:11:09Z",
+      "query_start_utc": "2026-10-13T18:01:07Z",
+      "raw_sources": [
+        {
+          "media_type": "application/json",
+          "path": "raw/container_memory_working_set_bytes.json",
+          "sha256": "a4da0d210148dde368c5eae112f407c7ab637e903a9b2bb8bb56c5204845fe21"
+        }
+      ],
+      "step_seconds": 15,
+      "unit": "bytes"
+    },
+    {
+      "availability": "available",
+      "labels": {
+        "container": "hpa-example",
+        "namespace": "default",
+        "pod": "php-apache-85668bb794-z45cl"
+      },
+      "lookback_seconds": null,
+      "name": "container_cpu_cfs_throttled_periods_total",
+      "promql": "container_cpu_cfs_throttled_periods_total{namespace=\"default\",pod=\"php-apache-85668bb794-z45cl\",container=\"hpa-example\"}",
+      "query_end_utc": "2026-10-13T18:11:09Z",
+      "query_start_utc": "2026-10-13T18:01:07Z",
+      "raw_sources": [
+        {
+          "media_type": "application/json",
+          "path": "raw/container_cpu_cfs_throttled_periods_total.json",
+          "sha256": "185ee81e814a98983597c5917b5e528a9e91ecbaef747166e1fcb791bb26faa3"
+        }
+      ],
+      "step_seconds": 15,
+      "unit": "periods"
+    },
+    {
+      "availability": "available",
+      "labels": {
+        "container": "hpa-example",
+        "namespace": "default",
+        "pod": "php-apache-85668bb794-z45cl"
+      },
+      "lookback_seconds": null,
+      "name": "container_cpu_cfs_periods_total",
+      "promql": "container_cpu_cfs_periods_total{namespace=\"default\",pod=\"php-apache-85668bb794-z45cl\",container=\"hpa-example\"}",
+      "query_end_utc": "2026-10-13T18:11:09Z",
+      "query_start_utc": "2026-10-13T18:01:07Z",
+      "raw_sources": [
+        {
+          "media_type": "application/json",
+          "path": "raw/container_cpu_cfs_periods_total.json",
+          "sha256": "4e0112d60cf0a65fb848b32274a2fbfe551a2396ba0a9ef79129c48edf8e2f18"
+        }
+      ],
+      "step_seconds": 15,
+      "unit": "periods"
+    },
+    {
+      "availability": "available",
+      "labels": {
+        "container": "hpa-example",
+        "namespace": "default",
+        "pod": "php-apache-85668bb794-z45cl"
+      },
+      "lookback_seconds": null,
+      "name": "container_cpu_cfs_throttled_seconds_total",
+      "promql": "container_cpu_cfs_throttled_seconds_total{namespace=\"default\",pod=\"php-apache-85668bb794-z45cl\",container=\"hpa-example\"}",
+      "query_end_utc": "2026-10-13T18:11:09Z",
+      "query_start_utc": "2026-10-13T18:01:07Z",
+      "raw_sources": [
+        {
+          "media_type": "application/json",
+          "path": "raw/container_cpu_cfs_throttled_seconds_total.json",
+          "sha256": "dd944d0a267b39a51c2834bed28f5a1e13a600c7cea11ef3f2ad82c63f08c35e"
+        }
+      ],
+      "step_seconds": 15,
+      "unit": "seconds"
+    }
+  ],
+  "observation_units": {
+    "cfs_periods_total": "periods",
+    "cfs_throttled_periods_total": "periods",
+    "cfs_throttled_seconds_total": "seconds",
+    "cpu_usage_cores": "cores",
+    "memory_working_set_bytes": "bytes",
+    "throttled_period_ratio_1m": "ratio"
+  },
+  "pattern": "stable",
+  "replicate": {
+    "observed_at_utc": null,
+    "reason": null,
+    "source": "integration_cli",
+    "status": "observed",
+    "value": 2
+  },
+  "run_id": "stable-low-r2-seed123-20261013-day3-02",
+  "run_outcome": "completed",
+  "schema_version": "1.0.0",
+  "scrape_interval": {
+    "observed_at_utc": "2026-10-13T18:11:10Z",
+    "reason": "Query evaluation step does not establish actual scrape cadence",
+    "source": "collection_summary.json",
+    "status": "unknown",
+    "value": null
+  },
+  "throttling": {
+    "coverage_end_utc": null,
+    "coverage_start_utc": null,
+    "covered_sample_count": null,
+    "evidence_metrics": [],
+    "reason": "Throttling counters observed; finding requires complete validator evidence",
+    "status": "unknown"
+  },
+  "timezone": "UTC",
+  "workload": {
+    "generator": {
+      "observed_at_utc": null,
+      "reason": null,
+      "source": "experiment_metadata.json",
+      "status": "observed",
+      "value": "experiment_kit/generators/locustfile.py"
+    },
+    "generator_sha256": {
+      "observed_at_utc": null,
+      "reason": null,
+      "source": "experiment_metadata.json",
+      "status": "observed",
+      "value": "f30b611a9e185d283fbe94870445f9c7130248f8cdc7db4515e6ce9b9337be15"
+    },
+    "generator_version": {
+      "observed_at_utc": "2026-10-13T18:11:10Z",
+      "reason": "Generator version was not recorded",
+      "source": "collection_summary.json",
+      "status": "unknown",
+      "value": null
+    },
+    "parameters": {
+      "duration_seconds": 300,
+      "load_level": "low",
+      "pattern": "stable",
+      "replicate": 2,
+      "target_url": "http://127.0.0.1:18080"
+    },
+    "random_seed": {
+      "observed_at_utc": null,
+      "reason": null,
+      "source": "experiment_metadata.json",
+      "status": "observed",
+      "value": 123
+    }
+  }
+}

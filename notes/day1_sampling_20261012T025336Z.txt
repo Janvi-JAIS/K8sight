@@ -1,0 +1,7 @@
+== TARGET ==
+pod: php-apache-85668bb794-z45cl
+uid: b0a1e8c1-37ea-4995-881b-c8eb50b5de1d
+container ID: containerd://30cd7b837ad0dd7821608ecedc5f3a63a3af341ecb4591692398f4ed8a190c79
+restarts: 1
+started at: 2026-10-11T14:08:29Z
+image ID: registry.k8s.io/hpa-example@sha256:581697a37f0e136db86d6b30392f0db40ce99c8248a7044c770012f4e8491544

@@ -1,0 +1,321 @@
+{
+  "boundaries": {
+    "collection_end_utc": "2026-10-13T19:58:38Z",
+    "collection_start_utc": "2026-10-13T19:48:35Z",
+    "cooldown_start_utc": "2026-10-13T19:55:37Z",
+    "locust_shutdown_utc": "2026-10-13T19:55:37Z",
+    "run_start_utc": "2026-10-13T19:50:35Z",
+    "unknown_reasons": {},
+    "workload_end_utc": "2026-10-13T19:55:37Z"
+  },
+  "data_quality": {
+    "container_changes": [],
+    "counter_resets": [],
+    "duplicate_timestamps": [],
+    "expected_samples": 41,
+    "gaps": [],
+    "observed_samples": 41,
+    "source_integrity": "verified"
+  },
+  "environment": {
+    "container": {
+      "observed_at_utc": "2026-10-13T19:58:38Z",
+      "reason": null,
+      "source": "collection_summary.json",
+      "status": "observed",
+      "value": "hpa-example"
+    },
+    "container_id": {
+      "observed_at_utc": "2026-10-13T19:50:35Z",
+      "reason": null,
+      "source": "experiment_metadata.json",
+      "status": "observed",
+      "value": "containerd://cb643dc8cd90083ed93af50b3919eb3f4b35903961f9ab89434828f2e32530a9"
+    },
+    "image": {
+      "observed_at_utc": "2026-10-13T19:50:35Z",
+      "reason": null,
+      "source": "experiment_metadata.json",
+      "status": "observed",
+      "value": "registry.k8s.io/hpa-example:latest"
+    },
+    "job": {
+      "observed_at_utc": "2026-10-13T19:58:38Z",
+      "reason": "Kubernetes job metadata was not collected",
+      "source": "collection_summary.json",
+      "status": "unknown",
+      "value": null
+    },
+    "kubernetes_context": {
+      "observed_at_utc": "2026-10-13T19:58:38Z",
+      "reason": "Kubernetes context was not recorded in the collection summary",
+      "source": "collection_summary.json",
+      "status": "unknown",
+      "value": null
+    },
+    "namespace": {
+      "observed_at_utc": "2026-10-13T19:58:38Z",
+      "reason": null,
+      "source": "collection_summary.json",
+      "status": "observed",
+      "value": "default"
+    },
+    "node": {
+      "observed_at_utc": "2026-10-13T19:50:35Z",
+      "reason": null,
+      "source": "experiment_metadata.json",
+      "status": "observed",
+      "value": "desktop-control-plane"
+    },
+    "pod": {
+      "observed_at_utc": "2026-10-13T19:50:35Z",
+      "reason": null,
+      "source": "experiment_metadata.json",
+      "status": "observed",
+      "value": "php-apache-85668bb794-z45cl"
+    },
+    "pod_uid": {
+      "observed_at_utc": "2026-10-13T19:50:35Z",
+      "reason": null,
+      "source": "experiment_metadata.json",
+      "status": "observed",
+      "value": "b0a1e8c1-37ea-4995-881b-c8eb50b5de1d"
+    },
+    "resources": {
+      "cpu_limit": {
+        "observed_at_utc": "2026-10-13T19:50:35Z",
+        "reason": null,
+        "source": "experiment_metadata.json",
+        "status": "observed",
+        "value": "500m"
+      },
+      "cpu_request": {
+        "observed_at_utc": "2026-10-13T19:50:35Z",
+        "reason": null,
+        "source": "experiment_metadata.json",
+        "status": "observed",
+        "value": "200m"
+      },
+      "memory_limit": {
+        "observed_at_utc": "2026-10-13T19:50:35Z",
+        "reason": null,
+        "source": "experiment_metadata.json",
+        "status": "observed",
+        "value": "128Mi"
+      },
+      "memory_request": {
+        "observed_at_utc": "2026-10-13T19:50:35Z",
+        "reason": null,
+        "source": "experiment_metadata.json",
+        "status": "observed",
+        "value": "64Mi"
+      }
+    }
+  },
+  "historical_audits": [],
+  "metrics": [
+    {
+      "availability": "available",
+      "labels": {
+        "container": "hpa-example",
+        "namespace": "default",
+        "pod": "php-apache-85668bb794-z45cl"
+      },
+      "lookback_seconds": 60,
+      "name": "container_cpu_usage_seconds_total",
+      "promql": "rate(container_cpu_usage_seconds_total{namespace=\"default\",pod=\"php-apache-85668bb794-z45cl\",container=\"hpa-example\"}[60s])",
+      "query_end_utc": "2026-10-13T19:58:38Z",
+      "query_start_utc": "2026-10-13T19:48:35Z",
+      "raw_sources": [
+        {
+          "media_type": "application/json",
+          "path": "raw/container_cpu_usage_seconds_total.json",
+          "sha256": "1fc70e2863e13249143b82fc945f78bd84f678c918d8175d851ba393b10d1e66"
+        }
+      ],
+      "step_seconds": 15,
+      "unit": "cores"
+    },
+    {
+      "availability": "available",
+      "labels": {
+        "container": "hpa-example",
+        "namespace": "default",
+        "pod": "php-apache-85668bb794-z45cl"
+      },
+      "lookback_seconds": null,
+      "name": "container_memory_working_set_bytes",
+      "promql": "container_memory_working_set_bytes{namespace=\"default\",pod=\"php-apache-85668bb794-z45cl\",container=\"hpa-example\"}",
+      "query_end_utc": "2026-10-13T19:58:38Z",
+      "query_start_utc": "2026-10-13T19:48:35Z",
+      "raw_sources": [
+        {
+          "media_type": "application/json",
+          "path": "raw/container_memory_working_set_bytes.json",
+          "sha256": "8fe90a3d0c27a0def8ca68323960371763c85ed8b5296594e8d6a510ce343645"
+        }
+      ],
+      "step_seconds": 15,
+      "unit": "bytes"
+    },
+    {
+      "availability": "available",
+      "labels": {
+        "container": "hpa-example",
+        "namespace": "default",
+        "pod": "php-apache-85668bb794-z45cl"
+      },
+      "lookback_seconds": null,
+      "name": "container_cpu_cfs_throttled_periods_total",
+      "promql": "container_cpu_cfs_throttled_periods_total{namespace=\"default\",pod=\"php-apache-85668bb794-z45cl\",container=\"hpa-example\"}",
+      "query_end_utc": "2026-10-13T19:58:38Z",
+      "query_start_utc": "2026-10-13T19:48:35Z",
+      "raw_sources": [
+        {
+          "media_type": "application/json",
+          "path": "raw/container_cpu_cfs_throttled_periods_total.json",
+          "sha256": "58b48e4efcc9e8c776cc4266ed238b1a6dc1d8c8910b612dd0ebaf2249c61808"
+        }
+      ],
+      "step_seconds": 15,
+      "unit": "periods"
+    },
+    {
+      "availability": "available",
+      "labels": {
+        "container": "hpa-example",
+        "namespace": "default",
+        "pod": "php-apache-85668bb794-z45cl"
+      },
+      "lookback_seconds": null,
+      "name": "container_cpu_cfs_periods_total",
+      "promql": "container_cpu_cfs_periods_total{namespace=\"default\",pod=\"php-apache-85668bb794-z45cl\",container=\"hpa-example\"}",
+      "query_end_utc": "2026-10-13T19:58:38Z",
+      "query_start_utc": "2026-10-13T19:48:35Z",
+      "raw_sources": [
+        {
+          "media_type": "application/json",
+          "path": "raw/container_cpu_cfs_periods_total.json",
+          "sha256": "530fe5f86ceb2e0a7633a19125f21c87f4b3d1289c5c51b219d1ae5a7508a2dd"
+        }
+      ],
+      "step_seconds": 15,
+      "unit": "periods"
+    },
+    {
+      "availability": "available",
+      "labels": {
+        "container": "hpa-example",
+        "namespace": "default",
+        "pod": "php-apache-85668bb794-z45cl"
+      },
+      "lookback_seconds": null,
+      "name": "container_cpu_cfs_throttled_seconds_total",
+      "promql": "container_cpu_cfs_throttled_seconds_total{namespace=\"default\",pod=\"php-apache-85668bb794-z45cl\",container=\"hpa-example\"}",
+      "query_end_utc": "2026-10-13T19:58:38Z",
+      "query_start_utc": "2026-10-13T19:48:35Z",
+      "raw_sources": [
+        {
+          "media_type": "application/json",
+          "path": "raw/container_cpu_cfs_throttled_seconds_total.json",
+          "sha256": "db1a543aca73917324577821ff86e31bf497bb96223fc8723b074e751953584a"
+        }
+      ],
+      "step_seconds": 15,
+      "unit": "seconds"
+    }
+  ],
+  "observation_units": {
+    "cfs_periods_total": "periods",
+    "cfs_throttled_periods_total": "periods",
+    "cfs_throttled_seconds_total": "seconds",
+    "cpu_usage_cores": "cores",
+    "memory_working_set_bytes": "bytes",
+    "throttled_period_ratio_1m": "ratio"
+  },
+  "pattern": "spike",
+  "replicate": {
+    "observed_at_utc": null,
+    "reason": null,
+    "source": "integration_cli",
+    "status": "observed",
+    "value": 1
+  },
+  "run_id": "spike-low-r1-seed20261014-day4-01",
+  "run_outcome": "completed",
+  "schema_version": "1.0.0",
+  "scrape_interval": {
+    "observed_at_utc": "2026-10-13T19:58:38Z",
+    "reason": "Query evaluation step does not establish actual scrape cadence",
+    "source": "collection_summary.json",
+    "status": "unknown",
+    "value": null
+  },
+  "throttling": {
+    "coverage_end_utc": null,
+    "coverage_start_utc": null,
+    "covered_sample_count": null,
+    "evidence_metrics": [],
+    "reason": "Throttling counters observed; finding requires complete validator evidence",
+    "status": "unknown"
+  },
+  "timezone": "UTC",
+  "workload": {
+    "generator": {
+      "observed_at_utc": "2026-10-13T19:50:35Z",
+      "reason": null,
+      "source": "experiment_metadata.json",
+      "status": "observed",
+      "value": "experiment_kit/generators/locustfile.py"
+    },
+    "generator_sha256": {
+      "observed_at_utc": "2026-10-13T19:50:35Z",
+      "reason": null,
+      "source": "experiment_metadata.json",
+      "status": "observed",
+      "value": "f30b611a9e185d283fbe94870445f9c7130248f8cdc7db4515e6ce9b9337be15"
+    },
+    "generator_version": {
+      "observed_at_utc": "2026-10-13T19:58:38Z",
+      "reason": "Generator version was not recorded",
+      "source": "collection_summary.json",
+      "status": "unknown",
+      "value": null
+    },
+    "parameters": {
+      "baseline_users": 2,
+      "duration_seconds": 300,
+      "load_level": "low",
+      "pattern": "spike",
+      "random_seed": 20261014,
+      "replicate": 1,
+      "spawn_rate": 20,
+      "spike_users": 15,
+      "stages": [
+        [
+          0,
+          99,
+          2
+        ],
+        [
+          99,
+          199,
+          15
+        ],
+        [
+          199,
+          300,
+          2
+        ]
+      ],
+      "target_url": "http://127.0.0.1:18080"
+    },
+    "random_seed": {
+      "observed_at_utc": "2026-10-13T19:50:35Z",
+      "reason": null,
+      "source": "experiment_metadata.json",
+      "status": "observed",
+      "value": 20261014
+    }
+  }
+}

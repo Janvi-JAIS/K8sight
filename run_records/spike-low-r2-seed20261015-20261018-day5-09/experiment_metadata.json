@@ -1,0 +1,188 @@
+{
+  "boundaries": {
+    "baseline_end_epoch": 1792320445,
+    "baseline_end_utc": "2026-10-18T10:47:25Z",
+    "baseline_start_epoch": 1792320325,
+    "baseline_start_utc": "2026-10-18T10:45:25Z",
+    "collection_end_epoch": 1792320928,
+    "collection_end_utc": "2026-10-18T10:55:28Z",
+    "collection_start_epoch": 1792320325,
+    "collection_start_utc": "2026-10-18T10:45:25Z",
+    "collector_finished_epoch": 1792320929,
+    "collector_finished_utc": "2026-10-18T10:55:29Z",
+    "cooldown_end_epoch": 1792320928,
+    "cooldown_end_utc": "2026-10-18T10:55:28Z",
+    "cooldown_start_epoch": 1792320748,
+    "cooldown_start_utc": "2026-10-18T10:52:28Z",
+    "locust_shutdown_epoch": 1792320748,
+    "locust_shutdown_utc": "2026-10-18T10:52:28Z",
+    "run_start_epoch": 1792320446,
+    "run_start_utc": "2026-10-18T10:47:26Z",
+    "workload_end_epoch": 1792320748,
+    "workload_end_utc": "2026-10-18T10:52:28Z"
+  },
+  "collector_exit_code": 0,
+  "cpu_limit_millicores": 500.0,
+  "cpu_observation_cores": 5.532554642933957e-05,
+  "cpu_safety_checks": [
+    {
+      "cpu_headroom_millicores": 499.94467445357066,
+      "cpu_limit": "500m",
+      "cpu_limit_millicores": 500.0,
+      "cpu_observed_cores": 5.532554642933957e-05,
+      "freshness_evidence": {
+        "cpu_cores": 5.532554642933957e-05,
+        "freshness_checked_at_epoch": 1792320325,
+        "freshness_checked_at_utc": "2026-10-18T10:45:25Z",
+        "freshness_range_end_epoch": 1792320325,
+        "freshness_range_start_epoch": 1792320295,
+        "freshness_step_seconds": 5,
+        "series_labels": {
+          "container": "hpa-example",
+          "cpu": "total",
+          "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-podb0a1e8c1_37ea_4995_881b_c8eb50b5de1d.slice/cri-containerd-cb643dc8cd90083ed93af50b3919eb3f4b35903961f9ab89434828f2e32530a9.scope",
+          "image": "registry.k8s.io/hpa-example:latest",
+          "instance": "desktop-control-plane",
+          "job": "kubernetes-cadvisor",
+          "name": "cb643dc8cd90083ed93af50b3919eb3f4b35903961f9ab89434828f2e32530a9",
+          "namespace": "default",
+          "node": "desktop-control-plane",
+          "pod": "php-apache-85668bb794-z45cl"
+        },
+        "source_sample_age_seconds": 12.80299997329712,
+        "source_sample_epoch": 1792320312.197,
+        "source_sample_utc": "2026-10-18T10:45:12Z"
+      },
+      "passed": true,
+      "required_headroom_millicores": 300,
+      "sample_observed_at_utc": "2026-10-18T10:45:12Z",
+      "stage": "preflight_before_baseline"
+    },
+    {
+      "container_id": "containerd://cb643dc8cd90083ed93af50b3919eb3f4b35903961f9ab89434828f2e32530a9",
+      "cpu_headroom_millicores": 499.93948715000204,
+      "cpu_limit": "500m",
+      "cpu_limit_millicores": 500.0,
+      "cpu_observed_cores": 6.051284999794938e-05,
+      "finished_at_utc": "2026-10-18T10:47:26Z",
+      "freshness_evidence": {
+        "cpu_cores": 6.051284999794938e-05,
+        "freshness_checked_at_epoch": 1792320446,
+        "freshness_checked_at_utc": "2026-10-18T10:47:26Z",
+        "freshness_range_end_epoch": 1792320446,
+        "freshness_range_start_epoch": 1792320416,
+        "freshness_step_seconds": 5,
+        "series_labels": {
+          "container": "hpa-example",
+          "cpu": "total",
+          "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-podb0a1e8c1_37ea_4995_881b_c8eb50b5de1d.slice/cri-containerd-cb643dc8cd90083ed93af50b3919eb3f4b35903961f9ab89434828f2e32530a9.scope",
+          "image": "registry.k8s.io/hpa-example:latest",
+          "instance": "desktop-control-plane",
+          "job": "kubernetes-cadvisor",
+          "name": "cb643dc8cd90083ed93af50b3919eb3f4b35903961f9ab89434828f2e32530a9",
+          "namespace": "default",
+          "node": "desktop-control-plane",
+          "pod": "php-apache-85668bb794-z45cl"
+        },
+        "source_sample_age_seconds": 15.500999927520752,
+        "source_sample_epoch": 1792320430.499,
+        "source_sample_utc": "2026-10-18T10:47:10Z"
+      },
+      "passed": true,
+      "pod": "php-apache-85668bb794-z45cl",
+      "pod_uid": "b0a1e8c1-37ea-4995-881b-c8eb50b5de1d",
+      "required_headroom_millicores": 300,
+      "sample_observed_at_utc": "2026-10-18T10:47:10Z",
+      "stage": "immediately_before_locust",
+      "started_at_epoch": 1792320445,
+      "started_at_utc": "2026-10-18T10:47:25Z"
+    }
+  ],
+  "duration_seconds": 300,
+  "events": [
+    {
+      "event": "baseline_started",
+      "observed_at_utc": "2026-10-18T10:45:25Z"
+    },
+    {
+      "event": "locust_started",
+      "observed_at_utc": "2026-10-18T10:47:26Z"
+    },
+    {
+      "event": "collector_finished",
+      "observed_at_utc": "2026-10-18T10:55:29Z"
+    }
+  ],
+  "generator": "experiment_kit/generators/locustfile.py",
+  "generator_sha256": "f30b611a9e185d283fbe94870445f9c7130248f8cdc7db4515e6ce9b9337be15",
+  "load_level": "low",
+  "locust_exit_code": 0,
+  "pattern": "spike",
+  "pod": {
+    "container_id": "containerd://cb643dc8cd90083ed93af50b3919eb3f4b35903961f9ab89434828f2e32530a9",
+    "image": "registry.k8s.io/hpa-example:latest",
+    "name": "php-apache-85668bb794-z45cl",
+    "node": "desktop-control-plane",
+    "ready": true,
+    "resources": {
+      "limits": {
+        "cpu": "500m",
+        "memory": "128Mi"
+      },
+      "requests": {
+        "cpu": "200m",
+        "memory": "64Mi"
+      }
+    },
+    "restart_count": 2,
+    "uid": "b0a1e8c1-37ea-4995-881b-c8eb50b5de1d"
+  },
+  "preload_cpu_gate": {
+    "container_id": "containerd://cb643dc8cd90083ed93af50b3919eb3f4b35903961f9ab89434828f2e32530a9",
+    "cpu_headroom_millicores": 499.93948715000204,
+    "cpu_limit": "500m",
+    "cpu_limit_millicores": 500.0,
+    "cpu_observed_cores": 6.051284999794938e-05,
+    "finished_at_utc": "2026-10-18T10:47:26Z",
+    "freshness_evidence": {
+      "cpu_cores": 6.051284999794938e-05,
+      "freshness_checked_at_epoch": 1792320446,
+      "freshness_checked_at_utc": "2026-10-18T10:47:26Z",
+      "freshness_range_end_epoch": 1792320446,
+      "freshness_range_start_epoch": 1792320416,
+      "freshness_step_seconds": 5,
+      "series_labels": {
+        "container": "hpa-example",
+        "cpu": "total",
+        "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-podb0a1e8c1_37ea_4995_881b_c8eb50b5de1d.slice/cri-containerd-cb643dc8cd90083ed93af50b3919eb3f4b35903961f9ab89434828f2e32530a9.scope",
+        "image": "registry.k8s.io/hpa-example:latest",
+        "instance": "desktop-control-plane",
+        "job": "kubernetes-cadvisor",
+        "name": "cb643dc8cd90083ed93af50b3919eb3f4b35903961f9ab89434828f2e32530a9",
+        "namespace": "default",
+        "node": "desktop-control-plane",
+        "pod": "php-apache-85668bb794-z45cl"
+      },
+      "source_sample_age_seconds": 15.500999927520752,
+      "source_sample_epoch": 1792320430.499,
+      "source_sample_utc": "2026-10-18T10:47:10Z"
+    },
+    "passed": true,
+    "pod": "php-apache-85668bb794-z45cl",
+    "pod_uid": "b0a1e8c1-37ea-4995-881b-c8eb50b5de1d",
+    "required_headroom_millicores": 300,
+    "sample_observed_at_utc": "2026-10-18T10:47:10Z",
+    "stage": "immediately_before_locust",
+    "started_at_epoch": 1792320445,
+    "started_at_utc": "2026-10-18T10:47:25Z"
+  },
+  "replicate": 2,
+  "required_cpu_headroom_millicores": 300,
+  "run_id": "spike-low-r2-seed20261015-20261018-day5-09",
+  "run_type": "experiment",
+  "seed": 20261015,
+  "status": "completed",
+  "target_url": "http://127.0.0.1:18080",
+  "training_acceptance_status": "pending_schema_validation_and_dataset_acceptance",
+  "training_eligible": false
+}

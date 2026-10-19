@@ -1,0 +1,60 @@
+{
+  "data": {
+    "result": [
+      {
+        "metric": {
+          "__name__": "container_cpu_cfs_periods_total",
+          "container": "hpa-example",
+          "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-podb0a1e8c1_37ea_4995_881b_c8eb50b5de1d.slice/cri-containerd-30cd7b837ad0dd7821608ecedc5f3a63a3af341ecb4591692398f4ed8a190c79.scope",
+          "image": "registry.k8s.io/hpa-example:latest",
+          "instance": "desktop-control-plane",
+          "job": "kubernetes-cadvisor",
+          "name": "30cd7b837ad0dd7821608ecedc5f3a63a3af341ecb4591692398f4ed8a190c79",
+          "namespace": "default",
+          "node": "desktop-control-plane",
+          "pod": "php-apache-85668bb794-z45cl"
+        },
+        "values": [
+          [
+            1791736405,
+            "1013"
+          ],
+          [
+            1791736420,
+            "1013"
+          ],
+          [
+            1791736435,
+            "1013"
+          ],
+          [
+            1791736450,
+            "1015"
+          ],
+          [
+            1791736465,
+            "1021"
+          ],
+          [
+            1791736480,
+            "1021"
+          ],
+          [
+            1791736495,
+            "1021"
+          ],
+          [
+            1791736510,
+            "1023"
+          ],
+          [
+            1791736525,
+            "1023"
+          ]
+        ]
+      }
+    ],
+    "resultType": "matrix"
+  },
+  "status": "success"
+}

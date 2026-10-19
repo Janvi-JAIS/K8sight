@@ -1,0 +1,461 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://k8sight.local/schema/run-manifest-1.0.0.json",
+  "title": "K8sight run manifest v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "run_id",
+    "pattern",
+    "replicate",
+    "timezone",
+    "run_outcome",
+    "workload",
+    "environment",
+    "boundaries",
+    "observation_units",
+    "scrape_interval",
+    "metrics",
+    "throttling",
+    "data_quality",
+    "historical_audits"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "pattern": {
+      "enum": [
+        "stable",
+        "increasing",
+        "periodic",
+        "spike",
+        "random_spike"
+      ]
+    },
+    "replicate": {
+      "$ref": "#/$defs/evidence"
+    },
+    "timezone": {
+      "const": "UTC"
+    },
+    "run_outcome": {
+      "enum": [
+        "completed",
+        "partial",
+        "failed",
+        "stopped",
+        "unknown"
+      ]
+    },
+    "workload": {
+      "type": "object",
+      "required": [
+        "generator",
+        "generator_version",
+        "generator_sha256",
+        "parameters",
+        "random_seed"
+      ],
+      "properties": {
+        "generator": {
+          "$ref": "#/$defs/evidence"
+        },
+        "generator_version": {
+          "$ref": "#/$defs/evidence"
+        },
+        "generator_sha256": {
+          "$ref": "#/$defs/evidence"
+        },
+        "parameters": {
+          "type": "object"
+        },
+        "random_seed": {
+          "$ref": "#/$defs/evidence"
+        }
+      }
+    },
+    "environment": {
+      "type": "object",
+      "required": [
+        "kubernetes_context",
+        "namespace",
+        "job",
+        "pod",
+        "pod_uid",
+        "container",
+        "container_id",
+        "image",
+        "node",
+        "resources"
+      ],
+      "properties": {
+        "kubernetes_context": {
+          "$ref": "#/$defs/evidence"
+        },
+        "namespace": {
+          "$ref": "#/$defs/evidence"
+        },
+        "job": {
+          "$ref": "#/$defs/evidence"
+        },
+        "pod": {
+          "$ref": "#/$defs/evidence"
+        },
+        "pod_uid": {
+          "$ref": "#/$defs/evidence"
+        },
+        "container": {
+          "$ref": "#/$defs/evidence"
+        },
+        "container_id": {
+          "$ref": "#/$defs/evidence"
+        },
+        "image": {
+          "$ref": "#/$defs/evidence"
+        },
+        "node": {
+          "$ref": "#/$defs/evidence"
+        },
+        "resources": {
+          "type": "object",
+          "required": [
+            "cpu_request",
+            "memory_request",
+            "cpu_limit",
+            "memory_limit"
+          ],
+          "properties": {
+            "cpu_request": {
+              "$ref": "#/$defs/evidence"
+            },
+            "memory_request": {
+              "$ref": "#/$defs/evidence"
+            },
+            "cpu_limit": {
+              "$ref": "#/$defs/evidence"
+            },
+            "memory_limit": {
+              "$ref": "#/$defs/evidence"
+            }
+          }
+        }
+      }
+    },
+    "boundaries": {
+      "type": "object",
+      "required": [
+        "run_start_utc",
+        "workload_end_utc",
+        "cooldown_start_utc",
+        "locust_shutdown_utc",
+        "collection_start_utc",
+        "collection_end_utc",
+        "unknown_reasons"
+      ],
+      "properties": {
+        "run_start_utc": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "workload_end_utc": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "cooldown_start_utc": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "locust_shutdown_utc": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "collection_start_utc": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "collection_end_utc": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "unknown_reasons": {
+          "type": "object"
+        }
+      }
+    },
+    "observation_units": {
+      "type": "object",
+      "required": [
+        "cpu_usage_cores",
+        "memory_working_set_bytes",
+        "cfs_throttled_periods_total",
+        "cfs_periods_total",
+        "cfs_throttled_seconds_total",
+        "throttled_period_ratio_1m"
+      ],
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "scrape_interval": {
+      "$ref": "#/$defs/evidence"
+    },
+    "metrics": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/metric"
+      }
+    },
+    "throttling": {
+      "type": "object",
+      "required": [
+        "status",
+        "reason",
+        "coverage_start_utc",
+        "coverage_end_utc",
+        "covered_sample_count",
+        "evidence_metrics"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "evidenced",
+            "not_evidenced_under_observed_coverage",
+            "unknown"
+          ]
+        },
+        "reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "coverage_start_utc": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "coverage_end_utc": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "covered_sample_count": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "evidence_metrics": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "data_quality": {
+      "type": "object",
+      "required": [
+        "expected_samples",
+        "observed_samples",
+        "gaps",
+        "duplicate_timestamps",
+        "counter_resets",
+        "container_changes",
+        "source_integrity"
+      ],
+      "properties": {
+        "expected_samples": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "observed_samples": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "gaps": {
+          "type": "array"
+        },
+        "duplicate_timestamps": {
+          "type": "array"
+        },
+        "counter_resets": {
+          "type": "array"
+        },
+        "container_changes": {
+          "type": "array"
+        },
+        "source_integrity": {
+          "enum": [
+            "verified",
+            "failed",
+            "not_checked",
+            "unknown"
+          ]
+        }
+      }
+    },
+    "historical_audits": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "source_type",
+          "reference",
+          "finding",
+          "raw_responses_archived"
+        ],
+        "properties": {
+          "source_type": {
+            "const": "audit_report"
+          },
+          "reference": {
+            "type": "string"
+          },
+          "finding": {
+            "type": "string"
+          },
+          "raw_responses_archived": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "$defs": {
+    "timestamp": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?Z$"
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "value",
+        "reason",
+        "source",
+        "observed_at_utc"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "observed",
+            "unknown",
+            "not_collected",
+            "not_applicable"
+          ]
+        },
+        "value": {},
+        "reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "observed_at_utc": {
+          "$ref": "#/$defs/timestamp"
+        }
+      }
+    },
+    "raw_source": {
+      "type": "object",
+      "required": [
+        "path",
+        "sha256",
+        "media_type"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[A-Fa-f0-9]{64}$"
+        },
+        "media_type": {
+          "const": "application/json"
+        }
+      },
+      "additionalProperties": false
+    },
+    "metric": {
+      "type": "object",
+      "required": [
+        "name",
+        "availability",
+        "promql",
+        "unit",
+        "query_start_utc",
+        "query_end_utc",
+        "step_seconds",
+        "lookback_seconds",
+        "labels",
+        "raw_sources"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "availability": {
+          "enum": [
+            "available",
+            "empty",
+            "unknown",
+            "not_collected",
+            "not_applicable"
+          ]
+        },
+        "promql": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "unit": {
+          "type": "string"
+        },
+        "query_start_utc": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "query_end_utc": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "step_seconds": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "exclusiveMinimum": 0
+        },
+        "lookback_seconds": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "labels": {
+          "type": "object"
+        },
+        "raw_sources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/raw_source"
+          }
+        }
+      }
+    }
+  }
+}

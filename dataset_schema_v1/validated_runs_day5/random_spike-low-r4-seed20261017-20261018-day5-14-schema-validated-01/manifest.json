@@ -1,0 +1,299 @@
+{
+  "boundaries": {
+    "collection_end_utc": "2026-10-18T13:35:28Z",
+    "collection_start_utc": "2026-10-18T13:25:25Z",
+    "cooldown_start_utc": null,
+    "locust_shutdown_utc": null,
+    "run_start_utc": null,
+    "unknown_reasons": {
+      "cooldown_start_utc": "Cooldown start was not supplied",
+      "locust_shutdown_utc": "Locust shutdown time was not supplied",
+      "run_start_utc": "Workload start was not supplied",
+      "workload_end_utc": "Workload end was not supplied"
+    },
+    "workload_end_utc": null
+  },
+  "data_quality": {
+    "container_changes": [],
+    "counter_resets": [],
+    "duplicate_timestamps": [],
+    "expected_samples": 41,
+    "gaps": [],
+    "observed_samples": 41,
+    "source_integrity": "verified"
+  },
+  "environment": {
+    "container": {
+      "observed_at_utc": "2026-10-18T13:35:28Z",
+      "reason": null,
+      "source": "collection_summary.json",
+      "status": "observed",
+      "value": "hpa-example"
+    },
+    "container_id": {
+      "observed_at_utc": "2026-10-18T13:35:28Z",
+      "reason": "Container ID was not collected",
+      "source": "collection_summary.json",
+      "status": "unknown",
+      "value": null
+    },
+    "image": {
+      "observed_at_utc": "2026-10-18T13:35:28Z",
+      "reason": "Container image was not collected",
+      "source": "collection_summary.json",
+      "status": "unknown",
+      "value": null
+    },
+    "job": {
+      "observed_at_utc": "2026-10-18T13:35:28Z",
+      "reason": "Kubernetes job metadata was not collected",
+      "source": "collection_summary.json",
+      "status": "unknown",
+      "value": null
+    },
+    "kubernetes_context": {
+      "observed_at_utc": "2026-10-18T13:35:28Z",
+      "reason": "Kubernetes context was not recorded in the collection summary",
+      "source": "collection_summary.json",
+      "status": "unknown",
+      "value": null
+    },
+    "namespace": {
+      "observed_at_utc": "2026-10-18T13:35:28Z",
+      "reason": null,
+      "source": "collection_summary.json",
+      "status": "observed",
+      "value": "default"
+    },
+    "node": {
+      "observed_at_utc": "2026-10-18T13:35:28Z",
+      "reason": "Node identity was not collected",
+      "source": "collection_summary.json",
+      "status": "unknown",
+      "value": null
+    },
+    "pod": {
+      "observed_at_utc": "2026-10-18T13:35:28Z",
+      "reason": null,
+      "source": "collection_summary.json",
+      "status": "observed",
+      "value": "php-apache-85668bb794-z45cl"
+    },
+    "pod_uid": {
+      "observed_at_utc": "2026-10-18T13:35:28Z",
+      "reason": "Pod UID was not collected",
+      "source": "collection_summary.json",
+      "status": "unknown",
+      "value": null
+    },
+    "resources": {
+      "cpu_limit": {
+        "observed_at_utc": "2026-10-18T13:35:28Z",
+        "reason": "CPU limit was not collected",
+        "source": "collection_summary.json",
+        "status": "unknown",
+        "value": null
+      },
+      "cpu_request": {
+        "observed_at_utc": "2026-10-18T13:35:28Z",
+        "reason": "CPU request was not collected",
+        "source": "collection_summary.json",
+        "status": "unknown",
+        "value": null
+      },
+      "memory_limit": {
+        "observed_at_utc": "2026-10-18T13:35:28Z",
+        "reason": "Memory limit was not collected",
+        "source": "collection_summary.json",
+        "status": "unknown",
+        "value": null
+      },
+      "memory_request": {
+        "observed_at_utc": "2026-10-18T13:35:28Z",
+        "reason": "Memory request was not collected",
+        "source": "collection_summary.json",
+        "status": "unknown",
+        "value": null
+      }
+    }
+  },
+  "historical_audits": [],
+  "metrics": [
+    {
+      "availability": "available",
+      "labels": {
+        "container": "hpa-example",
+        "namespace": "default",
+        "pod": "php-apache-85668bb794-z45cl"
+      },
+      "lookback_seconds": 60,
+      "name": "container_cpu_usage_seconds_total",
+      "promql": "rate(container_cpu_usage_seconds_total{namespace=\"default\",pod=\"php-apache-85668bb794-z45cl\",container=\"hpa-example\"}[60s])",
+      "query_end_utc": "2026-10-18T13:35:28Z",
+      "query_start_utc": "2026-10-18T13:25:25Z",
+      "raw_sources": [
+        {
+          "media_type": "application/json",
+          "path": "raw/container_cpu_usage_seconds_total.json",
+          "sha256": "819f2dc3f747a3460ebeb2c70eb7f183abf3236d36a577537eca11a2d9ca459f"
+        }
+      ],
+      "step_seconds": 15,
+      "unit": "cores"
+    },
+    {
+      "availability": "available",
+      "labels": {
+        "container": "hpa-example",
+        "namespace": "default",
+        "pod": "php-apache-85668bb794-z45cl"
+      },
+      "lookback_seconds": null,
+      "name": "container_memory_working_set_bytes",
+      "promql": "container_memory_working_set_bytes{namespace=\"default\",pod=\"php-apache-85668bb794-z45cl\",container=\"hpa-example\"}",
+      "query_end_utc": "2026-10-18T13:35:28Z",
+      "query_start_utc": "2026-10-18T13:25:25Z",
+      "raw_sources": [
+        {
+          "media_type": "application/json",
+          "path": "raw/container_memory_working_set_bytes.json",
+          "sha256": "116f1751ec42440bb87eb99bdb8f559855c90b13a88a403531f8bf946a36b0c9"
+        }
+      ],
+      "step_seconds": 15,
+      "unit": "bytes"
+    },
+    {
+      "availability": "available",
+      "labels": {
+        "container": "hpa-example",
+        "namespace": "default",
+        "pod": "php-apache-85668bb794-z45cl"
+      },
+      "lookback_seconds": null,
+      "name": "container_cpu_cfs_throttled_periods_total",
+      "promql": "container_cpu_cfs_throttled_periods_total{namespace=\"default\",pod=\"php-apache-85668bb794-z45cl\",container=\"hpa-example\"}",
+      "query_end_utc": "2026-10-18T13:35:28Z",
+      "query_start_utc": "2026-10-18T13:25:25Z",
+      "raw_sources": [
+        {
+          "media_type": "application/json",
+          "path": "raw/container_cpu_cfs_throttled_periods_total.json",
+          "sha256": "76f7f2c02dc81991a0047f784f2fe5bc3bfc388039bb5d37aefab284e7a66134"
+        }
+      ],
+      "step_seconds": 15,
+      "unit": "periods"
+    },
+    {
+      "availability": "available",
+      "labels": {
+        "container": "hpa-example",
+        "namespace": "default",
+        "pod": "php-apache-85668bb794-z45cl"
+      },
+      "lookback_seconds": null,
+      "name": "container_cpu_cfs_periods_total",
+      "promql": "container_cpu_cfs_periods_total{namespace=\"default\",pod=\"php-apache-85668bb794-z45cl\",container=\"hpa-example\"}",
+      "query_end_utc": "2026-10-18T13:35:28Z",
+      "query_start_utc": "2026-10-18T13:25:25Z",
+      "raw_sources": [
+        {
+          "media_type": "application/json",
+          "path": "raw/container_cpu_cfs_periods_total.json",
+          "sha256": "cff7d75ac98f4a20304ab42308e1e26c64b4538a54f39c81ec22bebcf41701e8"
+        }
+      ],
+      "step_seconds": 15,
+      "unit": "periods"
+    },
+    {
+      "availability": "available",
+      "labels": {
+        "container": "hpa-example",
+        "namespace": "default",
+        "pod": "php-apache-85668bb794-z45cl"
+      },
+      "lookback_seconds": null,
+      "name": "container_cpu_cfs_throttled_seconds_total",
+      "promql": "container_cpu_cfs_throttled_seconds_total{namespace=\"default\",pod=\"php-apache-85668bb794-z45cl\",container=\"hpa-example\"}",
+      "query_end_utc": "2026-10-18T13:35:28Z",
+      "query_start_utc": "2026-10-18T13:25:25Z",
+      "raw_sources": [
+        {
+          "media_type": "application/json",
+          "path": "raw/container_cpu_cfs_throttled_seconds_total.json",
+          "sha256": "c35a4ff1204e5eb37261b1f98249644befcffc7e64e884d883cdba658fc458f9"
+        }
+      ],
+      "step_seconds": 15,
+      "unit": "seconds"
+    }
+  ],
+  "observation_units": {
+    "cfs_periods_total": "periods",
+    "cfs_throttled_periods_total": "periods",
+    "cfs_throttled_seconds_total": "seconds",
+    "cpu_usage_cores": "cores",
+    "memory_working_set_bytes": "bytes",
+    "throttled_period_ratio_1m": "ratio"
+  },
+  "pattern": "random_spike",
+  "replicate": {
+    "observed_at_utc": null,
+    "reason": null,
+    "source": "integration_cli",
+    "status": "observed",
+    "value": 4
+  },
+  "run_id": "random_spike-low-r4-seed20261017-20261018-day5-14",
+  "run_outcome": "unknown",
+  "schema_version": "1.0.0",
+  "scrape_interval": {
+    "observed_at_utc": "2026-10-18T13:35:28Z",
+    "reason": "Query evaluation step does not establish actual scrape cadence",
+    "source": "collection_summary.json",
+    "status": "unknown",
+    "value": null
+  },
+  "throttling": {
+    "coverage_end_utc": null,
+    "coverage_start_utc": null,
+    "covered_sample_count": null,
+    "evidence_metrics": [],
+    "reason": "No throttling finding is inferred by offline integration",
+    "status": "unknown"
+  },
+  "timezone": "UTC",
+  "workload": {
+    "generator": {
+      "observed_at_utc": "2026-10-18T13:35:28Z",
+      "reason": "Workload execution was not verified by the collector",
+      "source": "collection_summary.json",
+      "status": "unknown",
+      "value": null
+    },
+    "generator_sha256": {
+      "observed_at_utc": "2026-10-18T13:35:28Z",
+      "reason": "Executed generator hash was not recorded",
+      "source": "collection_summary.json",
+      "status": "unknown",
+      "value": null
+    },
+    "generator_version": {
+      "observed_at_utc": "2026-10-18T13:35:28Z",
+      "reason": "Generator version was not recorded",
+      "source": "collection_summary.json",
+      "status": "unknown",
+      "value": null
+    },
+    "parameters": {},
+    "random_seed": {
+      "observed_at_utc": "2026-10-18T13:35:28Z",
+      "reason": "Random seed was not recorded by the collector",
+      "source": "collection_summary.json",
+      "status": "unknown",
+      "value": null
+    }
+  }
+}

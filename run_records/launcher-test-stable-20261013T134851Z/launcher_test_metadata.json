@@ -1,0 +1,76 @@
+{
+  "collection": {
+    "collection_end_epoch": 1791903007,
+    "collection_end_utc": "2026-10-13T14:50:07Z",
+    "collection_start_epoch": 1791902401,
+    "collection_start_utc": "2026-10-13T14:40:01Z",
+    "cooldown_seconds_requested": 180,
+    "exit_code": 0,
+    "finished_at_utc": "2026-10-13T14:50:08Z",
+    "target_identity_verified": true
+  },
+  "collection_start_epoch": 1791902401,
+  "collection_start_utc": "2026-10-13T14:40:01Z",
+  "configuration": {
+    "application_url": "http://127.0.0.1:18080/?value=10500",
+    "baseline_seconds": 120,
+    "cooldown_seconds": 180,
+    "cpu_lookback_seconds": 60,
+    "duration_seconds": 300,
+    "prometheus_step_seconds": 15,
+    "prometheus_url": "http://127.0.0.1:19091",
+    "users": 1
+  },
+  "created_at_utc": "2026-10-13T14:39:55Z",
+  "events": [
+    {
+      "event": "preflight_passed",
+      "observed_at_utc": "2026-10-13T14:40:01Z"
+    },
+    {
+      "event": "baseline_wait_started",
+      "observed_at_utc": "2026-10-13T14:40:01Z"
+    },
+    {
+      "event": "locust_process_launch",
+      "observed_at_utc": "2026-10-13T14:42:01Z"
+    },
+    {
+      "event": "locust_process_exit",
+      "exit_code": 0,
+      "observed_at_utc": "2026-10-13T14:47:06Z"
+    },
+    {
+      "event": "collection_finished",
+      "observed_at_utc": "2026-10-13T14:50:08Z"
+    }
+  ],
+  "load_level": "launcher_test",
+  "locust_exit_code": 0,
+  "pattern": "stable",
+  "preflight": {
+    "application_http_status": 200,
+    "container": "hpa-example",
+    "container_id": "containerd://cb643dc8cd90083ed93af50b3919eb3f4b35903961f9ab89434828f2e32530a9",
+    "cpu_limit": "500m",
+    "cpu_limit_millicores": 500.0,
+    "cpu_usage_cores": 9.711083588816436e-05,
+    "cpu_usage_millicores": 0.097,
+    "generator_sha256": "cd239a5e06149f1d0a6c8f43d45a49d215a08f25a0d71a95080fe5cd30d8dabd",
+    "kubernetes_context": "docker-desktop",
+    "namespace": "default",
+    "observed_at_utc": "2026-10-13T14:40:01Z",
+    "pod": "php-apache-85668bb794-z45cl",
+    "pod_uid": "b0a1e8c1-37ea-4995-881b-c8eb50b5de1d",
+    "prometheus_healthy": true,
+    "required_headroom_millicores": 300,
+    "restart_count_before": 2
+  },
+  "purpose": "launcher_test_only_not_training_data",
+  "replicate": 0,
+  "run_directory": "/home/janvee/k8sight-locust/run_records/launcher-test-stable-20261013T134851Z",
+  "run_id": "launcher-test-stable-20261013T134851Z",
+  "status": "completed",
+  "training_excluded": true,
+  "workload_end_boundary_note": "Process-exit time is used conservatively as the workload-end boundary for this launcher test; do not use this run for training."
+}

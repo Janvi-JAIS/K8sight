@@ -1,0 +1,22 @@
+Pod: php-apache-85668bb794-z45cl
+Pod UID: b0a1e8c1-37ea-4995-881b-c8eb50b5de1d
+Container restarts: 1
+
+== RAW CPU SAMPLE SPACING ==
+Samples: 59
+Span seconds: 922.4
+Min / median / p90 / p95 / max: 10.21 15.62 19.82 23.17 29.07
+Gaps >30s: 0
+
+== CANDIDATE GRID COVERAGE ==
+15s: 9/61 empty intervals (14.8%)
+30s: 0/30 empty intervals (0.0%)
+60s: 0/15 empty intervals (0.0%)
+
+== CADVISOR HEALTH ==
+up minimum: [1.0]
+scrape count: [63.0]
+scrape duration p95: [0.432]
+
+Diagnostic complete. No sampling interval selected.
+Repeat spacing measurement under workload before final decision.

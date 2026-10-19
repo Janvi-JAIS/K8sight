@@ -1,0 +1,270 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://k8sight.local/schema/acceptance-record-1.0.0.json",
+  "title": "K8sight acceptance record v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "record_schema_version",
+    "acceptance_record_id",
+    "run_id",
+    "pattern",
+    "designated_output_path",
+    "source_artifacts",
+    "validation",
+    "eligibility_audit",
+    "throttling_evidence",
+    "decision",
+    "evidence_reviewed",
+    "caveats_accepted",
+    "outstanding_blockers",
+    "deferred_questions",
+    "target_identity",
+    "resource_configuration",
+    "feature_target_scope",
+    "supersedes_record_id"
+  ],
+  "properties": {
+    "record_schema_version": {"const": "1.0.0"},
+    "acceptance_record_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+    },
+    "pattern": {
+      "enum": ["stable", "increasing", "periodic", "spike", "random_spike"]
+    },
+    "designated_output_path": {"$ref": "#/$defs/projectRelativePath"},
+    "source_artifacts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/sourceArtifact"}
+    },
+    "validation": {"$ref": "#/$defs/validation"},
+    "eligibility_audit": {"$ref": "#/$defs/eligibilityAudit"},
+    "throttling_evidence": {"$ref": "#/$defs/throttlingEvidence"},
+    "decision": {"$ref": "#/$defs/decision"},
+    "evidence_reviewed": {"$ref": "#/$defs/stringList"},
+    "caveats_accepted": {"$ref": "#/$defs/stringList"},
+    "outstanding_blockers": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/blocker"}
+    },
+    "deferred_questions": {"$ref": "#/$defs/stringList"},
+    "target_identity": {"$ref": "#/$defs/targetIdentity"},
+    "resource_configuration": {"$ref": "#/$defs/resourceConfiguration"},
+    "feature_target_scope": {"$ref": "#/$defs/featureTargetScope"},
+    "supersedes_record_id": {
+      "oneOf": [
+        {"type": "null"},
+        {"type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"}
+      ]
+    },
+    "request_count_evidence": {
+      "type": "object",
+      "required": ["stats_csv_or_history", "terminal_summary"],
+      "properties": {
+        "stats_csv_or_history": {"type": "integer", "minimum": 0},
+        "terminal_summary": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "notes": {"type": "string"}
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "decision": {
+            "properties": {
+              "status": {
+                "enum": ["accepted_for_cpu_memory_classification", "accepted_for_throttling_analysis"]
+              }
+            },
+            "required": ["status"]
+          }
+        },
+        "required": ["decision"]
+      },
+      "then": {
+        "properties": {
+          "decision": {
+            "required": ["decision_at_utc", "policy_version", "rationale", "approver"],
+            "properties": {
+              "decision_at_utc": {"type": "string", "format": "date-time"},
+              "policy_version": {"type": "string", "minLength": 1},
+              "rationale": {"type": "string", "minLength": 1},
+              "approver": {
+                "type": "object",
+                "required": ["kind"],
+                "properties": {
+                  "kind": {"const": "human"},
+                  "identifier": {"type": ["string", "null"], "minLength": 1},
+                  "role": {"type": ["string", "null"], "minLength": 1}
+                },
+                "anyOf": [{"required": ["identifier"]}, {"required": ["role"]}],
+                "additionalProperties": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "projectRelativePath": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\).+$"
+    },
+    "sourceArtifact": {
+      "type": "object",
+      "required": ["role", "path", "sha256"],
+      "properties": {
+        "role": {"type": "string", "minLength": 1},
+        "path": {"$ref": "#/$defs/projectRelativePath"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-fA-F]{64}$"}
+      },
+      "additionalProperties": false
+    },
+    "validation": {
+      "type": "object",
+      "required": ["result", "schema_version", "audited_at_utc", "validator_version"],
+      "properties": {
+        "result": {"enum": ["pass", "fail", "unknown"]},
+        "schema_version": {"type": ["string", "null"]},
+        "audited_at_utc": {"type": ["string", "null"], "format": "date-time"},
+        "validator_version": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "eligibilityAudit": {
+      "type": "object",
+      "required": ["result", "audited_at_utc", "audit_version", "source_integrity"],
+      "properties": {
+        "result": {"enum": ["pass", "review_required", "blocked", "unknown"]},
+        "audited_at_utc": {"type": ["string", "null"], "format": "date-time"},
+        "audit_version": {"type": ["string", "null"]},
+        "source_integrity": {"enum": ["verified", "failed", "unknown"]}
+      },
+      "additionalProperties": false
+    },
+    "throttlingEvidence": {
+      "type": "object",
+      "required": [
+        "observed_status",
+        "calculation_reviewed",
+        "aligned_counter_coverage",
+        "reset_gap_checks",
+        "interpretation_criteria_reviewed"
+      ],
+      "properties": {
+        "observed_status": {"enum": ["evidenced", "not_evidenced_under_observed_coverage", "unknown"]},
+        "calculation_reviewed": {"enum": ["pass", "fail", "unknown", "not_applicable"]},
+        "aligned_counter_coverage": {"enum": ["pass", "fail", "unknown", "not_applicable"]},
+        "reset_gap_checks": {"enum": ["pass", "fail", "unknown", "not_applicable"]},
+        "interpretation_criteria_reviewed": {"enum": ["pass", "fail", "unknown", "not_applicable"]}
+      },
+      "additionalProperties": false
+    },
+    "decision": {
+      "type": "object",
+      "required": ["status", "authorized_scope", "decision_at_utc", "approver", "policy_version", "rationale"],
+      "properties": {
+        "status": {
+          "enum": [
+            "eligible_for_review",
+            "accepted_for_cpu_memory_classification",
+            "accepted_for_throttling_analysis",
+            "rejected",
+            "deferred_pending_evidence"
+          ]
+        },
+        "authorized_scope": {"enum": ["none", "cpu_memory_classification", "throttling_analysis"]},
+        "decision_at_utc": {"type": ["string", "null"], "format": "date-time"},
+        "approver": {
+          "type": "object",
+          "required": ["kind", "identifier", "role"],
+          "properties": {
+            "kind": {"enum": ["human", "none"]},
+            "identifier": {"type": ["string", "null"]},
+            "role": {"type": ["string", "null"]}
+          },
+          "additionalProperties": false
+        },
+        "policy_version": {"type": ["string", "null"]},
+        "rationale": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "stringList": {"type": "array", "items": {"type": "string"}},
+    "blocker": {
+      "type": "object",
+      "required": ["code", "severity", "status", "description"],
+      "properties": {
+        "code": {"type": "string", "minLength": 1},
+        "severity": {"enum": ["hard_blocker", "review_required", "informational"]},
+        "status": {"enum": ["open", "resolved"]},
+        "description": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "evidenceValue": {
+      "type": "object",
+      "required": ["status", "value", "reason"],
+      "properties": {
+        "status": {"enum": ["observed", "unknown", "not_collected", "not_applicable"]},
+        "value": {},
+        "reason": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "targetIdentity": {
+      "type": "object",
+      "required": ["namespace", "pod", "pod_uid", "container", "container_id", "image", "node"],
+      "properties": {
+        "namespace": {"$ref": "#/$defs/evidenceValue"},
+        "pod": {"$ref": "#/$defs/evidenceValue"},
+        "pod_uid": {"$ref": "#/$defs/evidenceValue"},
+        "container": {"$ref": "#/$defs/evidenceValue"},
+        "container_id": {"$ref": "#/$defs/evidenceValue"},
+        "image": {"$ref": "#/$defs/evidenceValue"},
+        "node": {"$ref": "#/$defs/evidenceValue"}
+      },
+      "additionalProperties": false
+    },
+    "resourceConfiguration": {
+      "type": "object",
+      "required": ["cpu_request", "cpu_limit", "memory_request", "memory_limit"],
+      "properties": {
+        "cpu_request": {"$ref": "#/$defs/evidenceValue"},
+        "cpu_limit": {"$ref": "#/$defs/evidenceValue"},
+        "memory_request": {"$ref": "#/$defs/evidenceValue"},
+        "memory_limit": {"$ref": "#/$defs/evidenceValue"}
+      },
+      "additionalProperties": false
+    },
+    "featureTargetScope": {
+      "type": "object",
+      "required": ["features", "targets", "excluded_phases", "missing_value_policy"],
+      "properties": {
+        "features": {"$ref": "#/$defs/stringList"},
+        "targets": {"$ref": "#/$defs/stringList"},
+        "excluded_phases": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"enum": ["pre_start", "cooldown", "post_shutdown", "unknown"]}
+        },
+        "missing_value_policy": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    }
+  }
+}

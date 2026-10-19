@@ -2,7 +2,7 @@ from locust import HttpUser, task, between, LoadTestShape
 
 
 class ApacheUser(HttpUser):
-    wait_time = between(0.1, 0.5)
+    wait_time = between(1, 2)
 
     @task
     def hit_root(self):
@@ -10,8 +10,8 @@ class ApacheUser(HttpUser):
 
 
 class GradualIncreaseShape(LoadTestShape):
-    start_users = 5
-    end_users = 100
+    start_users = 1
+    end_users = 5
     duration = 600  # 10 minutes
     spawn_rate = 5
 

@@ -1,0 +1,60 @@
+{
+  "data": {
+    "result": [
+      {
+        "metric": {
+          "container": "hpa-example",
+          "cpu": "total",
+          "id": "/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-podb0a1e8c1_37ea_4995_881b_c8eb50b5de1d.slice/cri-containerd-30cd7b837ad0dd7821608ecedc5f3a63a3af341ecb4591692398f4ed8a190c79.scope",
+          "image": "registry.k8s.io/hpa-example:latest",
+          "instance": "desktop-control-plane",
+          "job": "kubernetes-cadvisor",
+          "name": "30cd7b837ad0dd7821608ecedc5f3a63a3af341ecb4591692398f4ed8a190c79",
+          "namespace": "default",
+          "node": "desktop-control-plane",
+          "pod": "php-apache-85668bb794-z45cl"
+        },
+        "values": [
+          [
+            1791736405,
+            "0.000045577527933418865"
+          ],
+          [
+            1791736420,
+            "0.000052667899505226654"
+          ],
+          [
+            1791736435,
+            "0.00006080966767371511"
+          ],
+          [
+            1791736450,
+            "0.00006235489998358647"
+          ],
+          [
+            1791736465,
+            "0.00006259225092250909"
+          ],
+          [
+            1791736480,
+            "0.0000645264956108454"
+          ],
+          [
+            1791736495,
+            "0.00006709510253481647"
+          ],
+          [
+            1791736510,
+            "0.00006450414100658331"
+          ],
+          [
+            1791736525,
+            "0.00005288659675444035"
+          ]
+        ]
+      }
+    ],
+    "resultType": "matrix"
+  },
+  "status": "success"
+}

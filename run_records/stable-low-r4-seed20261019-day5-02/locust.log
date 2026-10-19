@@ -1,0 +1,12 @@
+[2026-10-18 17:53:19,323] DESKTOP-8M2U7LM/INFO/locust.main: Starting Locust 2.46.4
+[2026-10-18 17:53:19,325] DESKTOP-8M2U7LM/WARNING/locust.main: --run-time, --users or --spawn-rate have no impact on LoadShapes unless the shape class explicitly reads them. See: docs.locust.io/en/stable/custom-load-shape.html#use-common-options
+[2026-10-18 17:53:19,326] DESKTOP-8M2U7LM/WARNING/locust.main: The following option(s) will be ignored: --run-time
+[2026-10-18 17:53:19,328] DESKTOP-8M2U7LM/INFO/locust.runners: Shape test starting.
+[2026-10-18 17:53:19,337] DESKTOP-8M2U7LM/INFO/locust.runners: Shape worker starting
+[2026-10-18 17:53:19,337] DESKTOP-8M2U7LM/INFO/locust.runners: Shape test updating to 2 users at 5.00 spawn rate
+[2026-10-18 17:53:19,338] DESKTOP-8M2U7LM/INFO/locust.runners: Ramping to 2 users at a rate of 5.00 per second
+[2026-10-18 17:53:19,343] DESKTOP-8M2U7LM/INFO/locust.runners: All users spawned: {"K8sightApacheUser": 2} (2 total users)
+[2026-10-18 17:58:19,840] DESKTOP-8M2U7LM/INFO/locust.runners: Shape test stopping
+[2026-10-18 17:58:19,883] DESKTOP-8M2U7LM/INFO/locust.main: Shape test completed, shutting down
+[2026-10-18 17:58:19,884] DESKTOP-8M2U7LM/INFO/locust.main: Run time limit set to 300 seconds
+[2026-10-18 17:58:19,884] DESKTOP-8M2U7LM/INFO/locust.main: Shutting down (exit code 0)

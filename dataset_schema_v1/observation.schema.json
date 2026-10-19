@@ -1,0 +1,16 @@
+{
+ "$schema":"https://json-schema.org/draft/2020-12/schema",
+ "$id":"https://k8sight.local/schema/observation-1.0.0.json","title":"K8sight observation row v1",
+ "type":"object","additionalProperties":false,
+ "required":["timestamp_utc","run_id","pattern","namespace","pod","pod_uid","container","container_id","sample_phase","cpu_usage_cores","cpu_rate_lookback_seconds","cpu_rate_window_status","memory_working_set_bytes","cfs_throttled_periods_total","cfs_periods_total","cfs_throttled_seconds_total","throttled_period_ratio_1m","quality_flags","missing_reasons"],
+ "properties":{
+  "timestamp_utc":{"type":"string","pattern":"^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?Z$","format":"date-time"},
+  "run_id":{"type":"string","minLength":1},"pattern":{"enum":["stable","increasing","periodic","spike","random_spike"]},
+  "namespace":{"type":["string","null"]},"pod":{"type":["string","null"]},"pod_uid":{"type":["string","null"]},"container":{"type":["string","null"]},"container_id":{"type":["string","null"]},
+  "sample_phase":{"enum":["pre_start","active","cooldown","post_shutdown","unknown"]},
+  "cpu_usage_cores":{"type":["number","null"],"minimum":0},"cpu_rate_lookback_seconds":{"type":["number","null"],"minimum":0},
+  "cpu_rate_window_status":{"enum":["fully_within_active","crosses_pre_start","crosses_cooldown","crosses_shutdown","unknown","not_applicable"]},
+  "memory_working_set_bytes":{"type":["integer","null"],"minimum":0},"cfs_throttled_periods_total":{"type":["number","null"],"minimum":0},"cfs_periods_total":{"type":["number","null"],"minimum":0},"cfs_throttled_seconds_total":{"type":["number","null"],"minimum":0},"throttled_period_ratio_1m":{"type":["number","null"],"minimum":0,"maximum":1},
+  "quality_flags":{"type":"array","items":{"type":"string"}},"missing_reasons":{"type":"object","additionalProperties":{"type":"string","minLength":1}}
+ }
+}

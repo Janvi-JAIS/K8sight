@@ -1,0 +1,18 @@
+[2026-10-18 18:18:05,105] DESKTOP-8M2U7LM/INFO/locust.main: Starting Locust 2.46.4
+[2026-10-18 18:18:05,106] DESKTOP-8M2U7LM/WARNING/locust.main: --run-time, --users or --spawn-rate have no impact on LoadShapes unless the shape class explicitly reads them. See: docs.locust.io/en/stable/custom-load-shape.html#use-common-options
+[2026-10-18 18:18:05,106] DESKTOP-8M2U7LM/WARNING/locust.main: The following option(s) will be ignored: --run-time
+[2026-10-18 18:18:05,111] DESKTOP-8M2U7LM/INFO/locust.runners: Shape test starting.
+[2026-10-18 18:18:05,114] DESKTOP-8M2U7LM/INFO/locust.runners: Shape worker starting
+[2026-10-18 18:18:05,115] DESKTOP-8M2U7LM/INFO/locust.runners: Shape test updating to 1 users at 5.00 spawn rate
+[2026-10-18 18:18:05,115] DESKTOP-8M2U7LM/INFO/locust.runners: Ramping to 1 users at a rate of 5.00 per second
+[2026-10-18 18:18:05,117] DESKTOP-8M2U7LM/INFO/locust.runners: All users spawned: {"K8sightApacheUser": 1} (1 total users)
+[2026-10-18 18:19:45,370] DESKTOP-8M2U7LM/INFO/locust.runners: Shape test updating to 2 users at 5.00 spawn rate
+[2026-10-18 18:19:45,370] DESKTOP-8M2U7LM/INFO/locust.runners: Ramping to 2 users at a rate of 5.00 per second
+[2026-10-18 18:19:45,371] DESKTOP-8M2U7LM/INFO/locust.runners: All users spawned: {"K8sightApacheUser": 2} (2 total users)
+[2026-10-18 18:21:25,588] DESKTOP-8M2U7LM/INFO/locust.runners: Shape test updating to 3 users at 5.00 spawn rate
+[2026-10-18 18:21:25,589] DESKTOP-8M2U7LM/INFO/locust.runners: Ramping to 3 users at a rate of 5.00 per second
+[2026-10-18 18:21:25,589] DESKTOP-8M2U7LM/INFO/locust.runners: All users spawned: {"K8sightApacheUser": 3} (3 total users)
+[2026-10-18 18:23:05,830] DESKTOP-8M2U7LM/INFO/locust.runners: Shape test stopping
+[2026-10-18 18:23:05,895] DESKTOP-8M2U7LM/INFO/locust.main: Shape test completed, shutting down
+[2026-10-18 18:23:05,895] DESKTOP-8M2U7LM/INFO/locust.main: Run time limit set to 300 seconds
+[2026-10-18 18:23:05,895] DESKTOP-8M2U7LM/INFO/locust.main: Shutting down (exit code 0)
